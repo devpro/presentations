@@ -2,4 +2,4 @@
 
 ## Presentations
 
-* [Azure DevOps 101 (Introduction)](./azure-devops-101/index.html)
+* [Azure DevOps 101 (Introduction)](./azure-devops-101/slides.html)
