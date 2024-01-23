@@ -35,7 +35,7 @@ jobs:
         run: |
           mkdir dist
           cp -r assets dist/assets
-          npm run build slides/demo.md -- --base presentations/demo -o dist/demo
+          npm run build slides/demo.md -- --base presentations/demo -o ../../dist/demo
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifacts
