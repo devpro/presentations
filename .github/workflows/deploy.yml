@@ -1,0 +1,47 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch: {}
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+env:
+  SITE_BASE: presentations
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Instal Node.js (LTS)
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+      - name: Install dependencies
+        run: npm install
+      - name: Build web content
+        run: |
+          mkdir dist
+          cp -r assets dist/assets
+          npm run build slides/demo.md -- --base presentations/demo -o dist/demo
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifacts
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: dist
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
