@@ -1,3 +1,4 @@
+# ref. https://sli.dev/guide/hosting.html#github-pages
 name: Deploy
 
 on:
@@ -36,6 +37,9 @@ jobs:
           mkdir dist
           cp -r assets dist/assets
           npm run build slides/demo.md -- --base presentations/demo -o ../../dist/demo
+          ls -alrt
+          ls -alrt ..
+          ls -alrt ../..
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifacts
