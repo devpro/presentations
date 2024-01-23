@@ -1,20 +1,12 @@
 # Devpro's presentations
 
-## Slidev
+[![Deploy](https://github.com/devpro/presentations/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/devpro/presentations/actions/workflows/deploy.yml)
 
-Presentations made with [Slidev](https://sli.dev/)
+Source or links to presentations made by Bertrand Thomas.
 
-To start the slide show:
+Feel free to [contribute](CONTRIBUTING.md).
 
-- install the dependencies with `npm install`
-- run the website with `npm run dev slides/demo.md`
-- visit [http://localhost:3030](http://localhost:3030)
-
-Edit the [slides.md](./slides/demo.md) to see the changes being applied.
-
-Don't forget to look at the presenter options while presenting (like dark mode switch).
-
-## Exports
+## Content
 
 Title                                                                    | Host       | Source
 -------------------------------------------------------------------------|------------|-------------------------------------------------
@@ -24,4 +16,4 @@ Title                                                                    | Host 
 [MongoDB News 2009 Q1](https://slides.com/devprofr/mongodb-news-2019-q1) | Slides.com | [html](exports/slides-mongodb-news-2019-q1.html)
 [Puppet Dojo](https://slides.com/devprofr/dojo-puppet)                   | Slides.com | [html](exports/slides-dojo-puppet.html)
 
-NB: html files are manual exports from [slides.com](https://slides.com/devprofr)
+💡 Files in `exports` folder are manually downloaded from [slides.com](https://slides.com/devprofr) as a backup
