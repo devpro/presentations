@@ -11,7 +11,7 @@ Meetup du 8 février 2024
 
 <div class="absolute bottom-10">
   <span class="font-700">
-    © Bertrand Thomas
+    Bertrand Thomas - Architecte Solution @ SUSE
   </span>
 </div>
 
@@ -31,15 +31,35 @@ image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-2-cl
 
 ---
 
-# Anatomie d'un conteneur
+# Conteneur vs VM
+
+<!-- L'approche traditionnelle des outils de sécurité système ne marche pas avec les conteneurs -->
 
 <img src="https://devpro.github.io/presentations/assets/images/container-inside.png" alt="Anatomy of a Container" class="m-8 ml-70 h-80" />
 
 ---
 
-# Recherche d'une faille
+# Orchestration de conteneurs
 
-<img src="https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-vault.jpeg" alt="Tom Cruise in a Vault for M-I" class="m-8 ml-40 h-80 rounded shadow" />
+<!-- Clusters Kubernetes -->
+
+TODO
+
+---
+
+# Construction d'une image
+
+<!-- Dockerfile -->
+
+TODO
+
+---
+
+# Chaîne d'approvisionnement
+
+<!-- Base de code, CI/CD pipelines, registre d'images, registre de charts Helm ; exemple avec images sur DockerHub, charts Helm -->
+
+TODO
 
 ---
 
@@ -50,17 +70,45 @@ image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-2-cl
 Source: [kubernetes.io/docs/concepts/security/overview](https://kubernetes.io/docs/concepts/security/overview/)
 
 ---
+
+# Recherche d'une faille
+
+<img src="https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-vault.jpeg" alt="Tom Cruise in a Vault for M-I" class="m-8 ml-40 h-80 rounded shadow" />
+
+---
+
+# Cluster Kubernetes
+
+CIS benchmark
+OPA
+Network Policy
+
+## Image du système d'exploitation
+
+## Exécution du conteneur
+
+Isolation
+
+## Image du conteneur
+
+CI/CD
+Définition (dockerfile)
+SBOM
+Image de base
+
+---
 layout: image-right
 image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-dead_reckoning_hill.jpeg'
 ---
 
 # Démo
 
-* Infrastructure Cloud (Microsoft Azure)
-* Clusters Kubernetes 1.xx gérés (AKS)
-* Applications web (Angular)
-* API REST (.NET)
-* Base de données NoSQL (MongoDB)
+* Infrastructure Cloud (**Azure**)
+* Clusters Kubernetes (**AKS**)
+* Applications web (**Angular**)
+* API REST (**.NET**)
+* Base de données NoSQL (**MongoDB**)
+* Chaîne d'assemblage (**GitHub**)
 
 ---
 
