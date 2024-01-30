@@ -31,11 +31,11 @@ image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-2-cl
 
 ---
 
-# Conteneur et infrastructure
+# Conteneur et centre de données
 
 <!-- L'approche traditionnelle des outils de sécurité système ne marche pas avec les conteneurs -->
 
-<img src="https://devpro.github.io/presentations/assets/images/container-inside.png" alt="Anatomy of a Container" class="m-8 ml-70 h-80" />
+<img src="https://devpro.github.io/presentations/assets/images/container-inside.png" alt="Container & datacenter" class="m-8 ml-50 h-100" />
 
 ---
 
@@ -43,7 +43,7 @@ image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-2-cl
 
 <!-- Clusters Kubernetes -->
 
-TODO
+<img src="https://devpro.github.io/presentations/assets/images/kubernetes-architecture.png" alt="Kubernetes architecture" class="m-8 ml-40 h-100" />
 
 ---
 
