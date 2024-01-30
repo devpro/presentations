@@ -31,7 +31,7 @@ image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-2-cl
 
 ---
 
-# Conteneur vs VM
+# Conteneur et infrastructure
 
 <!-- L'approche traditionnelle des outils de sécurité système ne marche pas avec les conteneurs -->
 
