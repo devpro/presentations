@@ -132,13 +132,13 @@ Source: [kubernetes.io/docs/concepts/security/overview](https://kubernetes.io/do
 
 ---
 
-## Image du conteneur
+# Image du conteneur
 
 * Images de base
   * [SUSE BCI](https://registry.suse.com/#bci) (Base Container Images)
 
 * Définition de l'image
-  * [docs.docker.com/develop/develop-images/dockerfile_best-practices/](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+  * [Dockerfile best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 
 * Analyse d'image (pipelines CI/CD + registres)
   * [Clair](https://quay.github.io/clair/)
@@ -147,15 +147,15 @@ Source: [kubernetes.io/docs/concepts/security/overview](https://kubernetes.io/do
 
 ---
 
-## Supervision active
+# Supervision active
 
 * Analyse compartementale
   * [Cilium](https://cilium.io/)
   * [Falco](https://falco.org/docs/)
   * [NeuVector](https://open-docs.neuvector.com/)
 
-* Audit
-  * [kubernetes.io/docs/tasks/debug/debug-cluster/audit/](https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/)
+* Dépannage
+  * [Audit (Kubernetes)](https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/)
 
 ---
 layout: image-right
