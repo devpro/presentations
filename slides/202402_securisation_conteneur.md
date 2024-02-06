@@ -85,12 +85,14 @@ image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-dead
 
 ---
 
-# Les 4 C's de la sécurité Cloud native
+# Les 4 C de la sécurité Cloud native
 
 <img src="https://kubernetes.io/images/docs/4c.png" alt="4 layers in security" class="m-8 ml-40 h-80 rounded shadow" />
 
 Source: [kubernetes.io/docs/concepts/security/overview](https://kubernetes.io/docs/concepts/security/overview/)
 
+---
+layout: two-cols
 ---
 
 # Cluster Kubernetes
@@ -102,6 +104,10 @@ Source: [kubernetes.io/docs/concepts/security/overview](https://kubernetes.io/do
 * Communication sécurisée
   * [Ingress with TLS (Kubernetes)](https://kubernetes.io/docs/concepts/services-networking/ingress/#tls)
 
+::right::
+
+# &nbsp;
+
 * Contrôle d'accès
   * [Role Based Access Control (Kubernetes)](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
 
@@ -109,13 +115,7 @@ Source: [kubernetes.io/docs/concepts/security/overview](https://kubernetes.io/do
   * [Network Policies (Kubernetes)](https://kubernetes.io/docs/concepts/services-networking/network-policies/)
 
 ---
-
-# Système d'exploitation
-
-* Durcissement des systèmes
-  * [AppArmor](https://kubernetes.io/docs/tutorials/security/apparmor/)
-  * [seccomp](https://kubernetes.io/docs/tutorials/security/seccomp/)
-
+layout: two-cols
 ---
 
 # Exécution du conteneur
@@ -130,9 +130,19 @@ Source: [kubernetes.io/docs/concepts/security/overview](https://kubernetes.io/do
   * [Kata Containers](https://katacontainers.io/)
   * [Runtime Class (Kubernetes)](https://kubernetes.io/docs/concepts/containers/runtime-class/)
 
+::right::
+
+# &nbsp;
+
+* Durcissement des systèmes
+  * [AppArmor](https://kubernetes.io/docs/tutorials/security/apparmor/)
+  * [seccomp](https://kubernetes.io/docs/tutorials/security/seccomp/)
+
 * Immutabilité
   * [Security Context (Kubernetes)](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/)
 
+---
+layout: two-cols
 ---
 
 # Image du conteneur
@@ -142,6 +152,10 @@ Source: [kubernetes.io/docs/concepts/security/overview](https://kubernetes.io/do
 
 * Définition de l'image
   * [Dockerfile best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+
+::right::
+
+# &nbsp;
 
 * Analyse d'image (pipelines CI/CD + registres)
   * [Clair](https://quay.github.io/clair/)
@@ -161,30 +175,56 @@ Source: [kubernetes.io/docs/concepts/security/overview](https://kubernetes.io/do
   * [Audit (Kubernetes)](https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/)
 
 ---
+layout: two-cols
+---
 
-# Techniques de sécurité (1/2)
+# Techniques de sécurité
 
 * Principes
   * Least privilege
   * Zero Trust
 
 * Conformités
-  * GDPR (General Data Protection Regulation)
-  * HIPAA (Health Insurance Portability and Accountability Act)
-  * ...
+  * GDPR [^1]
+  * HIPAA [^2]
+  * Etc.
 
----
+::right::
 
-# Techniques de sécurité (2/2)
+# &nbsp;
 
 * Fonctionnalités
-  * Analyse du traffic Nord-Sud et Est-Ouest (externe-interne et interne-interne)
-  * Détection des CVE (Common Vulnerabilities and Exposures)
+  * Analyse du traffic Nord-Sud et Est-Ouest
+  * Détection des CVE [^3]
   * Pare-feu applicatif internet (WAF)
   * Prévention contre les pertes de donnée (DLP)
-  * Protection contre les dérives (Drift) sur réseau, fichiers, traitements
-  * Détection des menaces connues (OWASP)
+  * Protection contre les dérives (Drift)
+  * Détection des menaces connues (OWASP [^4])
 
+[^1]: [1] General Data Protection Regulation
+[^2]: [2] Health Insurance Portability and Accountability Act
+[^3]: [3] Common Vulnerabilities and Exposures ([cve.org](https://www.cve.org/))
+[^4]: [4] Open Worldwide Application Security Project ([owasp.org](https://owasp.org/))
+
+<style>
+.footnotes-sep {
+  display: none;
+}
+.footnotes {
+  margin-top: 5rem;
+  @apply text-sm opacity-75;
+}
+.footnote-item p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.footnote-backref {
+  display: none;
+}
+</style>
+
+---
+layout: two-cols
 ---
 
 # Points d'attention
@@ -195,6 +235,10 @@ Source: [kubernetes.io/docs/concepts/security/overview](https://kubernetes.io/do
 
 * Différence dans le comportement
   * Détection (après-coup) vs protection (empêchement)
+
+::right::
+
+# &nbsp;
 
 * Pratiques DevOps
   * Cycles courts (agilité, CI/CD)
