@@ -22,7 +22,7 @@ image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-2-cl
 
 # Objectifs
 
-* 🚫 Approche complète
+* 🚫 Présentation exhaustive
 * 🚫 Discours vendeur
 * 🚫 Solution propriétaire / coûteuse
 * ✅ Conseils pratiques
@@ -30,8 +30,8 @@ image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-2-cl
 * ✅ Outils (réellement) open-source
 
 ---
-layout: image-right
-image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-dead_reckoning_hill.jpeg'
+layout: intro-image-right
+image: 'https://devpro.github.io/presentations/assets/images/tom-cruise--m-i-ghost-protocol-climbing-building.jpg'
 ---
 
 # Partie I - Surfaces d'attaque
@@ -50,7 +50,7 @@ image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-dead
 
 <!-- Clusters Kubernetes, nodes = serveurs (VMs) -->
 
-<img src="https://devpro.github.io/presentations/assets/images/kubernetes-architecture.png" alt="Kubernetes architecture" class="ml-20 h-110" />
+<img src="https://devpro.github.io/presentations/assets/images/kubernetes-architecture.png" alt="Kubernetes architecture" class="ml-20 h-105" />
 
 ---
 
@@ -58,7 +58,7 @@ image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-dead
 
 <!-- Dockerfile, registre -->
 
-<img src="https://devpro.github.io/presentations/assets/images/container-build.png" alt="Container build" class="m-8 ml-30 h-100" />
+<img src="https://devpro.github.io/presentations/assets/images/container-build.png" alt="Container build" class="m-5 ml-10 h-100" />
 
 ---
 
@@ -66,7 +66,7 @@ image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-dead
 
 <!-- Base de code, CI/CD pipelines, registre d'images, registre de charts Helm ; exemple avec images sur DockerHub, charts Helm -->
 
-<img src="https://devpro.github.io/presentations/assets/images/continuous-delivery-pipeline.png" alt="Container build" class="m-18 ml-5 h-65" />
+<img src="https://devpro.github.io/presentations/assets/images/continuous-delivery-pipeline.png" alt="Container build" class="m-20 ml-5 h-65" />
 
 ---
 
@@ -77,7 +77,7 @@ image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-dead
 <img src="https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-vault.jpeg" alt="Tom Cruise in a Vault for M-I" class="m-8 ml-40 h-80 rounded shadow" />
 
 ---
-layout: image-right
+layout: intro-image-right
 image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-dead_reckoning_hill.jpeg'
 ---
 
@@ -95,7 +95,7 @@ Source: [kubernetes.io/docs/concepts/security/overview](https://kubernetes.io/do
 
 # Cluster Kubernetes
 
-* Recommendation de configurationb
+* Recommendation de configuration
   * [CIS Benchmark (Center for Internet Security)](https://www.cisecurity.org/benchmark/kubernetes)
   * [kube-bench](https://github.com/aquasecurity/kube-bench)
 
@@ -130,6 +130,9 @@ Source: [kubernetes.io/docs/concepts/security/overview](https://kubernetes.io/do
   * [Kata Containers](https://katacontainers.io/)
   * [Runtime Class (Kubernetes)](https://kubernetes.io/docs/concepts/containers/runtime-class/)
 
+* Immutabilité
+  * [Security Context (Kubernetes)](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/)
+
 ---
 
 # Image du conteneur
@@ -149,7 +152,7 @@ Source: [kubernetes.io/docs/concepts/security/overview](https://kubernetes.io/do
 
 # Supervision active
 
-* Analyse compartementale
+* Analyse comportementale
   * [Cilium](https://cilium.io/)
   * [Falco](https://falco.org/docs/)
   * [NeuVector](https://open-docs.neuvector.com/)
@@ -158,26 +161,69 @@ Source: [kubernetes.io/docs/concepts/security/overview](https://kubernetes.io/do
   * [Audit (Kubernetes)](https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/)
 
 ---
-layout: image-right
-image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-dead_reckoning_hill.jpeg'
+
+# Techniques de sécurité (1/2)
+
+* Principes
+  * Least privilege
+  * Zero Trust
+
+* Conformités
+  * GDPR (General Data Protection Regulation)
+  * HIPAA (Health Insurance Portability and Accountability Act)
+  * ...
+
 ---
 
-# Partie III - Démo
+# Techniques de sécurité (2/2)
+
+* Fonctionnalités
+  * Analyse du traffic Nord-Sud et Est-Ouest (externe-interne et interne-interne)
+  * Détection des CVE (Common Vulnerabilities and Exposures)
+  * Pare-feu applicatif internet (WAF)
+  * Prévention contre les pertes de donnée (DLP)
+  * Protection contre les dérives (Drift) sur réseau, fichiers, traitements
+  * Détection des menaces connues (OWASP)
+
+---
+
+# Points d'attention
+
+* Analyse des images
+  * Statique vs en cours d'exécution
+  * Ponctuelle (CI/CD) vs régulière
+
+* Différence dans le comportement
+  * Détection (après-coup) vs protection (empêchement)
+
+* Pratiques DevOps
+  * Cycles courts (agilité, CI/CD)
+  * Shift-Left
+  * DevSecOps != personne/équipe
+  * Outils accessibles à tous
+  * Automatisation (as-code)
+
+---
+layout: image-right
+image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-fallout-jump-plane.jpg'
+---
+
+# Démo - Sales Portal
 
 <!-- Codebase: https://github.com/devpro/sales-portal -->
 
 * Infrastructure Cloud (**Azure**)
 * Clusters Kubernetes (**AKS**)
+* Base de données NoSQL (**MongoDB**)
 * Applications web (**Angular**)
 * API REST (**.NET**)
-* Base de données NoSQL (**MongoDB**)
 * Chaîne d'assemblage (**GitHub**)
 
 <!-- Web app: https://sales-portal.20.31.7.5.sslip.io/ -->
 
 ---
 
-# Liens
+# Annexes - Liens
 
 * [Evènement meetup](https://www.meetup.com/fr-FR/devops-geneve/events/298652964/)
 * [CKS Certification Study Guide](https://github.com/devpro/learn-kubernetes/tree/main/docs/certifications/cks)
