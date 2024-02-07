@@ -148,19 +148,48 @@ layout: two-cols
 # Image du conteneur
 
 * Images de base
-  * [SUSE BCI](https://registry.suse.com/#bci) (Base Container Images)
+  * [Alpine Linux](https://github.com/alpinelinux)
+  * [Bitnami Containers Libary](https://github.com/bitnami/containers)
+  * [SUSE BCI](https://registry.suse.com/#bci) [^1]
 
-* Définition de l'image
-  * [Dockerfile best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+* Catalogue d'images
+  * [Bitnami Application Catalog](https://bitnami.com/stacks)
+  * [Docker Hub](https://hub.docker.com/)
+  * [SUSE Application Collection](https://apps.rancher.io/)
 
 ::right::
 
 # &nbsp;
 
-* Analyse d'image (pipelines CI/CD + registres)
+* Définition de l'image (pipelines CI/CD)
+  * [Dockerfile best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+  * [MegaLinter](https://megalinter.io/latest/)
+  * [Sonar](https://www.sonarsource.com/)
+
+* Analyse d'image (pipelines CI/CD [^2] + registres)
   * [Clair](https://quay.github.io/clair/)
   * [NeuVector](https://open-docs.neuvector.com/)
   * [Trivy](https://aquasecurity.github.io/trivy)
+
+[^1]: [1] Base Container Images
+[^2]: [2] Continuous Integration/Continuous Delivery
+
+<style>
+.footnotes-sep {
+  display: none;
+}
+.footnotes {
+  margin-top: 5rem;
+  @apply text-sm opacity-75;
+}
+.footnote-item p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.footnote-backref {
+  display: none;
+}
+</style>
 
 ---
 
@@ -175,10 +204,18 @@ layout: two-cols
   * [Audit (Kubernetes)](https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/)
 
 ---
+layout: Center
+---
+
+# Trop d'informations ?
+
+<img src="https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-glass-water-breaks.jpg" alt="Eviter la deferlente" class="m-8 ml-40 h-80 rounded shadow" />
+
+---
 layout: two-cols
 ---
 
-# Techniques de sécurité
+# Conception de la solution
 
 * Principes
   * Least privilege
@@ -187,7 +224,6 @@ layout: two-cols
 * Conformités
   * GDPR [^1]
   * HIPAA [^2]
-  * Etc.
 
 ::right::
 
@@ -196,10 +232,11 @@ layout: two-cols
 * Fonctionnalités
   * Analyse du traffic Nord-Sud et Est-Ouest
   * Détection des CVE [^3]
+  * Gestion des menaces connues (OWASP [^4])
+  * Impact faible sur les ressources
   * Pare-feu applicatif internet (WAF)
   * Prévention contre les pertes de donnée (DLP)
   * Protection contre les dérives (Drift)
-  * Détection des menaces connues (OWASP [^4])
 
 [^1]: [1] General Data Protection Regulation
 [^2]: [2] Health Insurance Portability and Accountability Act
@@ -211,7 +248,7 @@ layout: two-cols
   display: none;
 }
 .footnotes {
-  margin-top: 5rem;
+  margin-top: 4rem;
   @apply text-sm opacity-75;
 }
 .footnote-item p {
@@ -248,22 +285,65 @@ layout: two-cols
   * Automatisation (as-code)
 
 ---
-layout: image-right
+layout: intro-image-right
 image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-fallout-jump-plane.jpg'
 ---
 
-# Démo - Sales Portal
+# Partie III - Démonstrations
+
+---
+
+# Images de base .NET
+
+* Analyse des images officielles de Microsoft et SUSE
+
+```bash
+alias trivy="docker run -it --rm
+-v trivy-cache:/root/.cache/ -v /var/run/docker.sock:/var/run/docker.sock:ro -v $HOME/.kube/config:/root/.kube/config \
+aquasec/trivy:latest"
+
+trivy image mcr.microsoft.com/dotnet/aspnet:8.0 | grep Total
+
+# Total: 86 (UNKNOWN: 0, LOW: 60, MEDIUM: 22, HIGH: 3, CRITICAL: 1)
+
+trivy image registry.suse.com/bci/dotnet-aspnet:8.0 | grep Total
+
+# Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
+```
+
+<!--
+trivy image mcr.microsoft.com/dotnet/sdk:8.0 | grep Total
+Total: 119 (UNKNOWN: 0, LOW: 81, MEDIUM: 26, HIGH: 11, CRITICAL: 1)
+trivy image nginx:alpine | grep Total
+Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
+-->
+
+---
+
+# Stack technique Sales Portal
 
 <!-- Codebase: https://github.com/devpro/sales-portal -->
 
 * Infrastructure Cloud (**Azure**)
 * Clusters Kubernetes (**AKS**)
 * Base de données NoSQL (**MongoDB**)
-* Applications web (**Angular**)
-* API REST (**.NET**)
+* Front/Applications web (**Angular**)
+* Microservices/API REST (**.NET**)
 * Chaîne d'assemblage (**GitHub**)
 
 <!-- Web app: https://sales-portal.20.31.7.5.sslip.io/ -->
+
+---
+
+# Check-list
+
+<!-- cis-1.7-profile for CIS Benchmark for Rancher 2.8.1 & AKS with Kubernetes 1.27.7 -->
+
+* ✅ Image validation in CI
+* ✅ RBAC
+* ✅ Registry scanning
+* ✅ CIS Benchmark
+* ✅ Zero-trust
 
 ---
 
