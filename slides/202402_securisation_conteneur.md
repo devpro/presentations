@@ -281,9 +281,9 @@ layout: two-cols
 
 ::right::
 
-<v-clicks>
-
 # &nbsp;
+
+<v-clicks>
 
 * Fonctionnalités
   * Analyse du traffic Nord-Sud et Est-Ouest
