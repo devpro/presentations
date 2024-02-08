@@ -3,7 +3,7 @@ theme: apple-basic
 layout: intro
 ---
 
-# Sécurisation des conteneurs
+# Sécurité des conteneurs
 
 Meetup du 8 février 2024
 
@@ -53,12 +53,34 @@ image: 'https://devpro.github.io/presentations/assets/images/tom-cruise--m-i-gho
 <img src="https://devpro.github.io/presentations/assets/images/kubernetes-architecture.png" alt="Kubernetes architecture" class="ml-20 h-105" />
 
 ---
+layout: two-cols
+---
 
-# Construction d'une image de conteneur
+# Construction d'une image
 
 <!-- Dockerfile, registre -->
 
-<img src="https://devpro.github.io/presentations/assets/images/container-build.png" alt="Container build" class="m-5 ml-10 h-100" />
+* Exemple ([Docker getting started](https://docs.docker.com/get-started/))
+
+```dockerfile
+# Dockerfile
+FROM node:18-alpine
+WORKDIR /app
+COPY . .
+RUN yarn install --production
+CMD ["node", "src/index.js"]
+EXPOSE 3000
+```
+
+<Arrow x1="520" y1="140" x2="140" y2="130" />
+
+<Arrow x1="620" y1="280" x2="400" y2="230" />
+
+::right::
+
+# &nbsp;
+
+<img src="https://devpro.github.io/presentations/assets/images/container-build.png" alt="Container build" class="m-15 ml-10 h-80" />
 
 ---
 
@@ -97,6 +119,8 @@ layout: two-cols
 
 # Cluster Kubernetes
 
+<v-clicks>
+
 * Recommendation de configuration
   * [CIS Benchmark (Center for Internet Security)](https://www.cisecurity.org/benchmark/kubernetes)
   * [kube-bench](https://github.com/aquasecurity/kube-bench)
@@ -104,9 +128,13 @@ layout: two-cols
 * Communication sécurisée
   * [Ingress with TLS (Kubernetes)](https://kubernetes.io/docs/concepts/services-networking/ingress/#tls)
 
+</v-clicks>
+
 ::right::
 
 # &nbsp;
+
+<v-clicks>
 
 * Contrôle d'accès
   * [Role Based Access Control (Kubernetes)](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
@@ -114,11 +142,15 @@ layout: two-cols
 * Restrictions réseau
   * [Network Policies (Kubernetes)](https://kubernetes.io/docs/concepts/services-networking/network-policies/)
 
+</v-clicks>
+
 ---
 layout: two-cols
 ---
 
 # Exécution du conteneur
+
+<v-clicks>
 
 * Admission & policies
   * [Kubewarden](https://www.kubewarden.io/)
@@ -130,9 +162,13 @@ layout: two-cols
   * [Kata Containers](https://katacontainers.io/)
   * [Runtime Class (Kubernetes)](https://kubernetes.io/docs/concepts/containers/runtime-class/)
 
+</v-clicks>
+
 ::right::
 
 # &nbsp;
+
+<v-clicks>
 
 * Durcissement des systèmes
   * [AppArmor](https://kubernetes.io/docs/tutorials/security/apparmor/)
@@ -141,25 +177,33 @@ layout: two-cols
 * Immutabilité
   * [Security Context (Kubernetes)](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/)
 
+</v-clicks>
+
 ---
 layout: two-cols
 ---
 
 # Image du conteneur
 
+<v-clicks>
+
 * Images de base
   * [Alpine Linux](https://github.com/alpinelinux)
   * [Bitnami Containers Libary](https://github.com/bitnami/containers)
   * [SUSE BCI](https://registry.suse.com/#bci) [^1]
 
-* Catalogue d'images
+* Catalogue d'applications
   * [Bitnami Application Catalog](https://bitnami.com/stacks)
   * [Docker Hub](https://hub.docker.com/)
   * [SUSE Application Collection](https://apps.rancher.io/)
 
+</v-clicks>
+
 ::right::
 
 # &nbsp;
+
+<v-clicks>
 
 * Définition de l'image (pipelines CI/CD)
   * [Dockerfile best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
@@ -170,6 +214,8 @@ layout: two-cols
   * [Clair](https://quay.github.io/clair/)
   * [NeuVector](https://open-docs.neuvector.com/)
   * [Trivy](https://aquasecurity.github.io/trivy)
+
+</v-clicks>
 
 [^1]: [1] Base Container Images
 [^2]: [2] Continuous Integration/Continuous Delivery
@@ -195,6 +241,8 @@ layout: two-cols
 
 # Supervision active
 
+<v-clicks>
+
 * Analyse comportementale
   * [Cilium](https://cilium.io/)
   * [Falco](https://falco.org/docs/)
@@ -203,8 +251,10 @@ layout: two-cols
 * Dépannage
   * [Audit (Kubernetes)](https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/)
 
+</v-clicks>
+
 ---
-layout: Center
+layout: cover
 ---
 
 # Trop d'informations ?
@@ -217,6 +267,8 @@ layout: two-cols
 
 # Conception de la solution
 
+<v-clicks>
+
 * Principes
   * Least privilege
   * Zero Trust
@@ -225,7 +277,11 @@ layout: two-cols
   * GDPR [^1]
   * HIPAA [^2]
 
+</v-clicks>
+
 ::right::
+
+<v-clicks>
 
 # &nbsp;
 
@@ -237,6 +293,8 @@ layout: two-cols
   * Pare-feu applicatif internet (WAF)
   * Prévention contre les pertes de donnée (DLP)
   * Protection contre les dérives (Drift)
+
+</v-clicks>
 
 [^1]: [1] General Data Protection Regulation
 [^2]: [2] Health Insurance Portability and Accountability Act
@@ -266,6 +324,8 @@ layout: two-cols
 
 # Points d'attention
 
+<v-clicks>
+
 * Analyse des images
   * Statique vs en cours d'exécution
   * Ponctuelle (CI/CD) vs régulière
@@ -273,9 +333,13 @@ layout: two-cols
 * Différence dans le comportement
   * Détection (après-coup) vs protection (empêchement)
 
+</v-clicks>
+
 ::right::
 
 # &nbsp;
+
+<v-clicks>
 
 * Pratiques DevOps
   * Cycles courts (agilité, CI/CD)
@@ -283,6 +347,8 @@ layout: two-cols
   * DevSecOps != personne/équipe
   * Outils accessibles à tous
   * Automatisation (as-code)
+
+</v-clicks>
 
 ---
 layout: intro-image-right
@@ -319,17 +385,31 @@ Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 -->
 
 ---
+layout: two-cols
+---
 
-# Stack technique Sales Portal
+# Microservice architecture
 
 <!-- Codebase: https://github.com/devpro/sales-portal -->
 
+<br>
+
 * Infrastructure Cloud (**Azure**)
 * Clusters Kubernetes (**AKS**)
-* Base de données NoSQL (**MongoDB**)
-* Front/Applications web (**Angular**)
-* Microservices/API REST (**.NET**)
 * Chaîne d'assemblage (**GitHub**)
+* Front avec Web SPA (**Angular**)
+* Back avec API REST (**.NET**)
+* Base de données NoSQL (**MongoDB**)
+
+::right::
+
+# &nbsp;
+
+<br>
+
+<img src="https://raw.githubusercontent.com/devpro/sales-portal/main/assets/images/salesportal-components.png" alt="Sales portal components" class="h-50" />
+
+Source: [devpro/sales-portal](https://github.com/devpro/sales-portal)
 
 <!-- Web app: https://sales-portal.20.31.7.5.sslip.io/ -->
 
@@ -337,7 +417,7 @@ Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 
 # Check-list
 
-<!-- cis-1.7-profile for CIS Benchmark for Rancher 2.8.1 & AKS with Kubernetes 1.27.7 -->
+<!-- cis-1.7-profile & aks-profile for CIS Benchmark for Rancher 2.8.1 & AKS with Kubernetes 1.27.7 -->
 
 * ✅ Image validation in CI
 * ✅ RBAC
