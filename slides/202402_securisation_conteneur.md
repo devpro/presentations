@@ -31,26 +31,10 @@ image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-2-cl
 
 ---
 layout: intro-image-right
-image: 'https://devpro.github.io/presentations/assets/images/tom-cruise--m-i-ghost-protocol-climbing-building.jpg'
+image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-fallout-jump-buildings.jpg'
 ---
 
-# Partie I - Surfaces d'attaque
-
----
-
-# Conteneur et centre de données
-
-<!-- L'approche traditionnelle des outils de sécurité système ne marche pas avec les conteneurs -->
-
-<img src="https://devpro.github.io/presentations/assets/images/container-inside.png" alt="Container & datacenter" class="m-8 ml-50 h-100" />
-
----
-
-# Orchestration de conteneurs
-
-<!-- Clusters Kubernetes, nodes = serveurs (VMs) -->
-
-<img src="https://devpro.github.io/presentations/assets/images/kubernetes-architecture.png" alt="Kubernetes architecture" class="ml-20 h-105" />
+# Partie I - Cycle de vie d'un container
 
 ---
 layout: two-cols
@@ -92,7 +76,23 @@ EXPOSE 3000
 
 ---
 
-# Atelier - Recherche d'une faille
+# Conteneur et centre de données
+
+<!-- L'approche traditionnelle des outils de sécurité système ne marche pas avec les conteneurs -->
+
+<img src="https://devpro.github.io/presentations/assets/images/container-inside.png" alt="Container & datacenter" class="m-8 ml-50 h-100" />
+
+---
+
+# Orchestration de conteneurs
+
+<!-- Clusters Kubernetes, nodes = serveurs (VMs) -->
+
+<img src="https://devpro.github.io/presentations/assets/images/kubernetes-architecture.png" alt="Kubernetes architecture" class="ml-20 h-105" />
+
+---
+
+# Atelier - Surfaces d'attaque
 
 <!-- Tableau blanc "Brainstorming - Hack the container" -->
 
@@ -128,6 +128,9 @@ layout: two-cols
 * Communication sécurisée
   * [Ingress with TLS (Kubernetes)](https://kubernetes.io/docs/concepts/services-networking/ingress/#tls)
 
+* Contrôle d'accès
+  * [Role Based Access Control (Kubernetes)](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
+
 </v-clicks>
 
 ::right::
@@ -136,11 +139,17 @@ layout: two-cols
 
 <v-clicks>
 
-* Contrôle d'accès
-  * [Role Based Access Control (Kubernetes)](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
-
 * Restrictions réseau
   * [Network Policies (Kubernetes)](https://kubernetes.io/docs/concepts/services-networking/network-policies/)
+
+* Analyse comportementale
+  * [Cilium](https://cilium.io/)
+  * [Falco](https://falco.org/docs/)
+  * [NeuVector](https://open-docs.neuvector.com/)
+
+* Dépannage
+  * [Audit (Kubernetes)](https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/)
+
 
 </v-clicks>
 
@@ -238,22 +247,6 @@ layout: two-cols
 </style>
 
 ---
-
-# Supervision active
-
-<v-clicks>
-
-* Analyse comportementale
-  * [Cilium](https://cilium.io/)
-  * [Falco](https://falco.org/docs/)
-  * [NeuVector](https://open-docs.neuvector.com/)
-
-* Dépannage
-  * [Audit (Kubernetes)](https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/)
-
-</v-clicks>
-
----
 layout: cover
 ---
 
@@ -346,7 +339,7 @@ layout: two-cols
   * Shift-Left
   * DevSecOps != personne/équipe
   * Outils accessibles à tous
-  * Automatisation (as-code)
+  * Automatisation (security-as-code)
 
 </v-clicks>
 
@@ -427,7 +420,19 @@ Source: [devpro/sales-portal](https://github.com/devpro/sales-portal)
 
 ---
 
-# Annexes - Liens
+# Liens
 
 * [Evènement meetup](https://www.meetup.com/fr-FR/devops-geneve/events/298652964/)
 * [CKS Certification Study Guide](https://github.com/devpro/learn-kubernetes/tree/main/docs/certifications/cks)
+
+---
+
+# Merci
+
+* ⭐ A mon employeur, **SUSE** 🦎, pour le temps alloué à préparer cette présentation et les ressources infrastructure pour la démo.
+
+* ⭐ A **Matthieu Robin** et les organisateurs du meetup pour la confiance accordée.
+
+* ⭐ A **Cédric Berriguiot** pour son état d'esprit, son aide et sa bonne humeur.
+
+* ⭐ A mon corsair préféré, **Nuno do Carmo**, pour la relecture, la bienveillance et les conseils.
