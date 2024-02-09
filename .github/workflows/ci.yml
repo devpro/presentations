@@ -1,0 +1,39 @@
+# purpose: continuously deploy the presentations
+# actions:
+#   - https://github.com/marketplace/actions/checkout
+#   - https://github.com/actions/setup-node
+# images:
+#   - https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md
+
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch: {}
+
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Instal Node.js (LTS)
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+      - name: Install dependencies
+        run: npm install
+      - name: Build web content
+        run: |
+          mkdir dist
+          cp -r assets dist/assets
+          npm run build src/index.md
+          npm run build src/demo.md
+          npm run build src/202402_securite_conteneur.md
