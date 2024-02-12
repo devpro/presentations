@@ -44,7 +44,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build web content
-        run: ./scripts/add_helm_repo.sh
+        run: ./scripts/build_presentations.sh
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifacts
