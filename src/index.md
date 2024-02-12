@@ -6,11 +6,15 @@ transition: slide-left
 
 # Devpro's presentations
 
-## Recent
+## Events
 
 * [🇫🇷 - Sécurité des conteneurs (Meetup DevOps Genève)](https://devpro.github.io/presentations/meetup-secu-conteneur-202402/) - Feb 2024
-* [Automated Testing](https://github.com/devpro/five-min-talks/blob/main/five-min-talks/automated-testing)
-* [Presentation-as-code](https://github.com/devpro/five-min-talks/blob/main/five-min-talks/presentation-as-code)
+
+## Recent
+
+* [Automated Testing](https://devpro.github.io/presentations/automated-testing)
+* [Code quality](https://devpro.github.io/presentations/automated-testing)
+* [Presentation-as-code](https://devpro.github.io/presentations/presentation-as-code)
 
 ## Archive
 
