@@ -13,8 +13,10 @@ transition: slide-left
 ## Recent
 
 * [Automated Testing](https://devpro.github.io/presentations/automated-testing)
-* [Code quality](https://devpro.github.io/presentations/automated-testing)
+* [Code quality](https://devpro.github.io/presentations/code-quality)
 * [Presentation-as-code](https://devpro.github.io/presentations/presentation-as-code)
+
+---
 
 ## Archive
 
