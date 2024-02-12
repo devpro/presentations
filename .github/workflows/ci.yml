@@ -31,9 +31,4 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build web content
-        run: |
-          mkdir dist
-          cp -r assets dist/assets
-          npm run build src/index.md
-          npm run build src/demo.md
-          npm run build src/202402_securite_conteneur.md
+        run: ./scripts/build_presentations.sh
