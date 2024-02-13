@@ -222,6 +222,7 @@ layout: two-cols
 
 * Analyse d'image (pipelines CI/CD [^2] + registres)
   * [Clair](https://quay.github.io/clair/)
+  * [Kubescape](https://kubescape.io/)
   * [NeuVector](https://open-docs.neuvector.com/)
   * [Trivy](https://aquasecurity.github.io/trivy)
 
