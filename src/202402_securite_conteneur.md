@@ -363,7 +363,7 @@ image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-fall
 * Analyse des images officielles de Microsoft et SUSE
 
 ```bash
-alias trivy="docker run -it --rm
+alias trivy="docker run -it --rm \
 -v trivy-cache:/root/.cache/ -v /var/run/docker.sock:/var/run/docker.sock:ro -v $HOME/.kube/config:/root/.kube/config \
 aquasec/trivy:latest"
 
