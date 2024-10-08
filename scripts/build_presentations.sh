@@ -2,6 +2,7 @@
 
 mkdir dist
 cp -r assets dist/assets
+cd slidev
 npm run build src/index.md -- --base presentations -o ../dist
 npm run build src/demo.md -- --base presentations/demo -o ../dist/demo
 npm run build src/automated-testing.md -- --base presentations/automated-testing -o ../dist/automated-testing
