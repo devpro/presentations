@@ -8,3 +8,4 @@ npm run build src/automated-testing.md -- --base presentations/automated-testing
 npm run build src/code-quality.md -- --base presentations/code-quality -o ../dist/code-quality
 npm run build src/presentation-as-code.md -- --base presentations/presentation-as-code -o ../dist/presentation-as-code
 npm run build src/202402_securite_conteneur.md -- --base presentations/meetup-secu-conteneur-202402 -o ../dist/meetup-secu-conteneur-202402
+npm run build src/devops-101-fr.md -- --base presentations/devops-101-fr -o ../dist/devops-101-fr
