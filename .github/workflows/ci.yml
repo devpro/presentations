@@ -28,7 +28,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
-      - name: Install dependencies
-        run: npm install
+      - name: Install Task
+        uses: arduino/setup-task@v2
       - name: Build web content
-        run: ./scripts/build_presentations.sh
+        run: |
+          marp:build

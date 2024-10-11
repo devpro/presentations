@@ -1,0 +1,43 @@
+version: '3'
+
+env:
+  SRC_FOLDER: src
+  MARP_CUSTOM_THEME: css/dracula.css
+
+tasks:
+  setup:
+    cmds:
+      - sudo npm install -g markdownlint-cli
+      - sudo npm install -g @marp-team/marp-cli
+      - cd slidev ; npm install
+
+  lint:
+    cmds:
+      - markdownlint *.md
+      - cd marp ; markdownlint *.md ; markdownlint src/*.md
+      - cd slidev ; markdownlint *.md ; markdownlint src/*.md
+
+  marp:build:
+    dir: marp
+    cmds:
+      - find "$SRC_FOLDER" -name '*.md' | grep -v '101' | xargs marp
+      - marp $SRC_FOLDER/*101.md --theme $MARP_CUSTOM_THEME
+
+  marp:publish:
+    cmds:
+      - mkdir -p dist/img
+      - cp marp/$SRC_FOLDER/*.html public/
+      - cp marp/$SRC_FOLDER/img/*.* public/img/
+
+  slidev:publish:
+    dir: slidev
+    cmds:
+      - mkdir -p ../dist
+      - cp -r assets dist/assets
+      - npm run build src/index.md -- --base presentations -o ../dist
+      - npm run build src/demo.md -- --base presentations/demo -o ../dist/demo
+      - npm run build src/automated-testing.md -- --base presentations/automated-testing -o ../dist/automated-testing
+      - npm run build src/code-quality.md -- --base presentations/code-quality -o ../dist/code-quality
+      - npm run build src/presentation-as-code.md -- --base presentations/presentation-as-code -o ../dist/presentation-as-code
+      - npm run build src/202402_securite_conteneur.md -- --base presentations/meetup-secu-conteneur-202402 -o ../dist/meetup-secu-conteneur-202402
+      - npm run build src/devops-101-fr.md -- --base presentations/devops-101-fr -o ../dist/devops-101-fr

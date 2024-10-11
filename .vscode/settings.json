@@ -1,0 +1,6 @@
+{
+    "files.exclude": {
+        "**/marp/src/*.html": true,
+        "**/marp/public": true
+    }
+}
