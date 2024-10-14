@@ -41,10 +41,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
-      - name: Install dependencies
+      - name: Install Task
+        uses: arduino/setup-task@v2
+      - name: Install Slidev packages
+        working-directory: slidev
         run: npm install
       - name: Build web content
-        run: ./scripts/build_presentations.sh
+        run: |
+          task marp:build
+      - name: Publish web content
+        run: |
+          task marp:publish
+          task slidev:publish
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifacts

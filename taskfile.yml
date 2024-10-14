@@ -26,18 +26,19 @@ tasks:
   marp:publish:
     cmds:
       - mkdir -p dist/img
-      - cp marp/$SRC_FOLDER/*.html public/
-      - cp marp/$SRC_FOLDER/img/*.* public/img/
+      - cp marp/$SRC_FOLDER/*.html dist/
+      - cp marp/$SRC_FOLDER/img/*.* dist/img/
 
   slidev:publish:
     dir: slidev
+    env:
+      DEST_FOLDER: '../dist'
     cmds:
-      - mkdir -p ../dist
-      - cp -r assets dist/assets
-      - npm run build src/index.md -- --base presentations -o ../dist
-      - npm run build src/demo.md -- --base presentations/demo -o ../dist/demo
-      - npm run build src/automated-testing.md -- --base presentations/automated-testing -o ../dist/automated-testing
-      - npm run build src/code-quality.md -- --base presentations/code-quality -o ../dist/code-quality
-      - npm run build src/presentation-as-code.md -- --base presentations/presentation-as-code -o ../dist/presentation-as-code
-      - npm run build src/202402_securite_conteneur.md -- --base presentations/meetup-secu-conteneur-202402 -o ../dist/meetup-secu-conteneur-202402
-      - npm run build src/devops-101-fr.md -- --base presentations/devops-101-fr -o ../dist/devops-101-fr
+      - mkdir -p $DEST_FOLDER
+      - cp -r assets $DEST_FOLDER/assets
+      - npm run build src/index.md -- --base presentations -o ../$DEST_FOLDER
+      - |
+        for file in "$SRC_FOLDER"/*.md; do
+          filename=$(basename "$file" .md)
+          npm run build "$SRC_FOLDER/$filename.md" -- --base "presentations/$filename" -o "../$DEST_FOLDER/$filename"
+        done

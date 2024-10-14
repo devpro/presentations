@@ -30,6 +30,11 @@ jobs:
           node-version: 'lts/*'
       - name: Install Task
         uses: arduino/setup-task@v2
+      - name: Install Slidev packages
+        working-directory: slidev
+        run: npm install
+      - name: Lint code
+        run: task lint
       - name: Build web content
         run: |
-          marp:build
+          task marp:build
