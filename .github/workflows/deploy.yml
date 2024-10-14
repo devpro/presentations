@@ -49,8 +49,6 @@ jobs:
       - name: Build web content
         run: |
           task marp:build
-      - name: Publish web content
-        run: |
           task marp:publish
           task slidev:publish
       - name: Setup Pages

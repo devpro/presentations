@@ -38,3 +38,5 @@ jobs:
       - name: Build web content
         run: |
           task marp:build
+          task marp:publish
+          task slidev:publish

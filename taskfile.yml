@@ -42,3 +42,11 @@ tasks:
           filename=$(basename "$file" .md)
           npm run build "$SRC_FOLDER/$filename.md" -- --base "presentations/$filename" -o "../$DEST_FOLDER/$filename"
         done
+
+  nginx:start:
+    cmds:
+      - docker run --name presentations-nginx -d --rm -v $PWD/dist:/usr/share/nginx/html/presentations:ro -p 8080:80 -d nginx
+
+  nginx:stop:
+    cmds:
+      - docker stop presentations-nginx || true
