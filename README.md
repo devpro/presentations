@@ -13,7 +13,7 @@ You are welcome to [contribute](CONTRIBUTING.md).
 
 Event                         | Session                                                                                                                               | Slides
 ------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------
-DevOpsDays Geneva 2023        | [🇫🇷 Transformation numérique et DevOps à l'heure des conteneurs](https://devopsdays.org/events/2023-geneva/program/bertrand-thomas) | [PDF](exports/202304_devopsdays_geneva_2023.pdf)
+DevOpsDays Geneva 2023        | [🇫🇷 Transformation numérique et DevOps à l'heure des conteneurs](https://devopsdays.org/events/2023-geneva/program/bertrand-thomas) | [PDF](https://public.devpro.fr/slides/devopsdays_geneva_2023_bertrand_thomas.pdf)
 Meetup DevOps Geneva Feb 2024 | [🇫🇷 La sécurité des conteneurs rendue simple grâce à l'open source](https://www.meetup.com/fr-FR/devops-geneve/events/298652964/)   | [HTML](https://devpro.github.io/presentations/meetup-secu-conteneur-202402/)
 
 ### Workshops

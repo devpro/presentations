@@ -25,3 +25,7 @@ For additional help on the content:
 
 - [Mermaid Diagramming and charting tool](https://mermaid.js.org/)
 - [UnoCSS](https://uno.antfu.me/)
+
+To deploy:
+
+- [Hosting > GitHub Pages](https://sli.dev/guide/hosting.html#github-pages)
