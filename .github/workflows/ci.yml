@@ -23,13 +23,11 @@ jobs:
           node-version: 'lts/*'
       - name: Install Task (taskfile.dev)
         uses: arduino/setup-task@v2                   # https://github.com/arduino/setup-task
-      - name: Install Slidev packages
-        working-directory: slidev
-        run: npm install
-      - name: Lint Markdown files
-        uses: DavidAnson/markdownlint-cli2-action@v16 # https://github.com/DavidAnson/markdownlint-cli2-action
-        with:
-          globs: '**/*.md'
+      - name: Install required CLIs
+        run: task setup
+      - name: Lint code
+        run: |
+          task lint
       - name: Build web content
         run: |
           task marp:build

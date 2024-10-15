@@ -31,9 +31,8 @@ jobs:
           node-version: 'lts/*'
       - name: Install Task (taskfile.dev)
         uses: arduino/setup-task@v2                 # https://github.com/arduino/setup-task
-      - name: Install Slidev packages
-        working-directory: slidev
-        run: npm install
+      - name: Install required CLIs
+        run: task setup
       - name: Build web content
         run: |
           task marp:build
