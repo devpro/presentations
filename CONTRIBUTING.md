@@ -1,23 +1,55 @@
-# How to contribute
+# Contribution guide
 
-## Development guide
+## Local setup
 
-This project is using NPM to use packages and run actions. Run `npm install` to install the dependencies.
+**NPM** must be installed (ref. [Download Node.js](https://nodejs.org/en/download/package-manager)):
 
-Presentations are made from Markdown files located in `slides` folder, with [Slidev](https://sli.dev/) ([code](https://github.com/slidevjs/slidev), [docs](https://sli.dev/guide/why.html)).
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+nvm install 20
+node -v
+npm -v
+```
 
-To start a specific slide show:
+**Python** must be installed.
 
-- run the website with `npm run dev src/<my-presentation>.md`
-- edit `src/<my-presentation>.md` and see the changes applied automatically on [http://localhost:3030](http://localhost:3030)
+**Task** ([taskfile.dev](https://taskfile.dev/installation/)) is used to simplify the commands and unify with the CI/CD pipelines:
 
-💡 Look at the presenter options while presenting (switch dark mode switch for example)
+```bash
+sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b ~/.local/bin
+```
 
-To generate the exports:
+NPM packages are required:
 
-- generate a PDF file in dark mode with `npm run export-dark src/<my-presentation>.md`
+```bash
+task setup
+```
 
-For additional help on the content:
+## Code checks
 
-- [Mermaid Diagramming and charting tool](https://mermaid.js.org/)
-- [UnoCSS](https://uno.antfu.me/)
+Lint the code with:
+
+```bash
+task lint
+```
+
+## Frameworks / libraries
+
+Presentations are build with:
+
+* [Marp](marp/README.md)
+* [Slidev](slidev/README.md)
+
+## Documentation
+
+Presentation powered by [MkDocs](https://www.mkdocs.org/).
+
+Start a local web server:
+
+```bash
+task docs:serve
+```
+
+Open the documentation on [127.0.0.1:8000](http://127.0.0.1:8000/).
+
+MkDocs configuration is read from [mkdocs.yml](mkdocs.yml).

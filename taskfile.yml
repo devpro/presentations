@@ -1,0 +1,71 @@
+version: '3'
+
+env:
+  SRC_FOLDER: src
+  MARP_CUSTOM_THEME: css/dracula.css
+
+tasks:
+  setup:
+    cmds:
+      - npm install -g markdownlint-cli
+      - npm install -g @marp-team/marp-cli
+      - cd slidev ; npm install
+      - pip install mkdocs
+      - pip install mkdocs-dracula-theme
+      # - pip install mkdocs-material
+
+  lint:
+    cmds:
+      - markdownlint *.md
+      - cd marp ; markdownlint *.md ; markdownlint src/*.md
+      - cd slidev ; markdownlint *.md ; markdownlint src/*.md
+
+  marp:build:
+    dir: marp
+    env:
+      DEST_FOLDER: '../dist'
+    cmds:
+      - find "$SRC_FOLDER" -name '*.md' | grep -v '101' | xargs marp
+      - marp $SRC_FOLDER/*101.md --theme $MARP_CUSTOM_THEME
+      - mkdir -p $DEST_FOLDER/img
+      - cp $SRC_FOLDER/*.html $DEST_FOLDER/
+      - cp $SRC_FOLDER/img/*.* $DEST_FOLDER/img/
+
+  slidev:build:
+    dir: slidev
+    env:
+      DEST_FOLDER: '../dist'
+    cmds:
+      - mkdir -p $DEST_FOLDER/assets/images
+      - cp -r assets/images/*.* $DEST_FOLDER/assets/images/
+      # - npm run build src/index.md -- --base presentations -o ../$DEST_FOLDER
+      - |
+        for file in "$SRC_FOLDER"/*.md; do
+          filename=$(basename "$file" .md)
+          npm run build "$SRC_FOLDER/$filename.md" -- --base "presentations/$filename" -o "../$DEST_FOLDER/$filename"
+        done
+
+  nginx:start:
+    cmds:
+      - docker run --name presentations-nginx -d --rm -v $PWD/dist:/usr/share/nginx/html/presentations:ro -p 8080:80 -d nginx
+
+  nginx:stop:
+    cmds:
+      - docker stop presentations-nginx || true
+
+  docs:build:
+    env:
+      DEST_FOLDER: 'dist'
+    cmds:
+      - mkdocs build -d $DEST_FOLDER
+
+  docs:serve:
+    cmds:
+      - mkdocs serve
+
+  build:
+    cmds:
+      - |
+        task docs:build
+        task marp:build
+        task slidev:build
