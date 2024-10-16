@@ -3,8 +3,6 @@ description: Checkout code and setup requirements for CI/CD pipelines
 runs:
   using: composite
   steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4                     # https://github.com/marketplace/actions/checkout
     - name: Instal Node.js (LTS)
       uses: actions/setup-node@v4                   # https://github.com/actions/setup-node
       with:

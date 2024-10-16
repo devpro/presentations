@@ -23,6 +23,8 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4                   # https://github.com/marketplace/actions/checkout
       - name: Use common action
         uses: ./.github/actions/setup
       - name: Build web content
