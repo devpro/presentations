@@ -17,7 +17,7 @@ Meetup du 8 février 2024
 
 ---
 layout: image-right
-image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-2-climbing.jpg'
+image: 'https://presentations.devpro.fr/assets/images/tom-cruise-m-i-2-climbing.jpg'
 ---
 
 # Objectifs
@@ -31,7 +31,7 @@ image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-2-cl
 
 ---
 layout: intro-image-right
-image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-fallout-jump-buildings.jpg'
+image: 'https://presentations.devpro.fr/assets/images/tom-cruise-m-i-fallout-jump-buildings.jpg'
 ---
 
 # Partie I - Cycle de vie d'un container
@@ -64,7 +64,7 @@ EXPOSE 3000
 
 # &nbsp;
 
-<img src="https://devpro.github.io/presentations/assets/images/container-build.png" alt="Container build" class="m-15 ml-10 h-80" />
+<img src="https://presentations.devpro.fr/assets/images/container-build.png" alt="Container build" class="m-15 ml-10 h-80" />
 
 ---
 
@@ -72,7 +72,7 @@ EXPOSE 3000
 
 <!-- Base de code, CI/CD pipelines, registre d'images, registre de charts Helm ; exemple avec images sur DockerHub, charts Helm -->
 
-<img src="https://devpro.github.io/presentations/assets/images/continuous-delivery-pipeline.png" alt="Container build" class="m-20 ml-5 h-65" />
+<img src="https://presentations.devpro.fr/assets/images/continuous-delivery-pipeline.png" alt="Container build" class="m-20 ml-5 h-65" />
 
 ---
 
@@ -80,7 +80,7 @@ EXPOSE 3000
 
 <!-- L'approche traditionnelle des outils de sécurité système ne marche pas avec les conteneurs -->
 
-<img src="https://devpro.github.io/presentations/assets/images/container-inside.png" alt="Container & datacenter" class="m-8 ml-50 h-100" />
+<img src="https://presentations.devpro.fr/assets/images/container-inside.png" alt="Container & datacenter" class="m-8 ml-50 h-100" />
 
 ---
 
@@ -88,7 +88,7 @@ EXPOSE 3000
 
 <!-- Clusters Kubernetes, nodes = serveurs (VMs) -->
 
-<img src="https://devpro.github.io/presentations/assets/images/kubernetes-architecture.png" alt="Kubernetes architecture" class="ml-20 h-105" />
+<img src="https://presentations.devpro.fr/assets/images/kubernetes-architecture.png" alt="Kubernetes architecture" class="ml-20 h-105" />
 
 ---
 
@@ -96,11 +96,11 @@ EXPOSE 3000
 
 <!-- Tableau blanc "Brainstorming - Hack the container" -->
 
-<img src="https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-vault.jpeg" alt="Tom Cruise in a Vault for M-I" class="m-8 ml-40 h-80 rounded shadow" />
+<img src="https://presentations.devpro.fr/assets/images/tom-cruise-m-i-vault.jpeg" alt="Tom Cruise in a Vault for M-I" class="m-8 ml-40 h-80 rounded shadow" />
 
 ---
 layout: intro-image-right
-image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-dead_reckoning_hill.jpeg'
+image: 'https://presentations.devpro.fr/assets/images/tom-cruise-m-i-dead_reckoning_hill.jpeg'
 ---
 
 # Partie II - Stratégie de sécurisation
@@ -254,7 +254,7 @@ layout: cover
 
 # Trop d'informations ?
 
-<img src="https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-glass-water-breaks.jpg" alt="Eviter la deferlente" class="m-8 ml-40 h-80 rounded shadow" />
+<img src="https://presentations.devpro.fr/assets/images/tom-cruise-m-i-glass-water-breaks.jpg" alt="Eviter la deferlente" class="m-8 ml-40 h-80 rounded shadow" />
 
 ---
 layout: two-cols
@@ -351,7 +351,7 @@ layout: two-cols
 
 ---
 layout: intro-image-right
-image: 'https://devpro.github.io/presentations/assets/images/tom-cruise-m-i-fallout-jump-plane.jpg'
+image: 'https://presentations.devpro.fr/assets/images/tom-cruise-m-i-fallout-jump-plane.jpg'
 ---
 
 # Partie III - Démonstrations

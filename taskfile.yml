@@ -39,10 +39,11 @@ tasks:
       - mkdir -p $DEST_FOLDER/assets/images
       - cp -r assets/images/*.* $DEST_FOLDER/assets/images/
       # - npm run build src/index.md -- --base presentations -o ../$DEST_FOLDER
+      # npm run build "$SRC_FOLDER/$filename.md" -- --base "presentations/$filename" -o "../$DEST_FOLDER/$filename"
       - |
         for file in "$SRC_FOLDER"/*.md; do
           filename=$(basename "$file" .md)
-          npm run build "$SRC_FOLDER/$filename.md" -- --base "presentations/$filename" -o "../$DEST_FOLDER/$filename"
+          npm run build "$SRC_FOLDER/$filename.md" -- --base "$filename" -o "../$DEST_FOLDER/$filename"
         done
 
   nginx:start:

@@ -160,7 +160,7 @@ Aka "The Three Pillars of Observability"
 
 ## Demonstration
 
-* Clone [rabbids-incubator/servicenow-dotnet-client](https://github.com/rabbids-incubator/servicenow-dotnet-client)
+* Clone [devpro/servicenow-dotnet-client](https://github.com/devpro/servicenow-dotnet-client)
 * Start containers with `docker-compose up`
 * Configure and run the sample web API with `dotnet run --project src samples/WebApiSample`
 * Make REST API calls from [Swagger page](https://localhost:7079/swagger/index.html)
