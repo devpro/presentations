@@ -67,4 +67,4 @@ tasks:
     deps:
       - task: docs:build
       - task: marp:build
-      - slidev: marp:build
+      - task: slidev:build
