@@ -120,8 +120,4 @@ Some _italic_ and **bold** element.
 
 ## That's all folks
 
-We'll be glad to have your feedback and support:
-
-→ [devpro.github.io/presentations/infrastructure-automation](https://devpro.github.io/presentations/infrastructure-automation)
-
 Happy updates :smile:

@@ -84,7 +84,7 @@ README.md
 
 ## Continuous integration pipeline (CI)
 
-* CI **badge** must be present at the top of the `README.md` file: [![GitLab Pipeline Status](https://gitlab.com/rabbids-incubator/infra-automation-best-practices/badges/main/pipeline.svg)](https://gitlab.com/rabbids-incubator/infra-automation-best-practices/-/pipelines)
+* CI **badge** must be present at the top of the `README.md` file
 
 * CI must run on every commit of **main branch**
 

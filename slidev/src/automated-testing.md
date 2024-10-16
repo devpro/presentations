@@ -29,7 +29,7 @@ What can be achieved with automated testing?
 
 Foundation of any testing strategy
 
-<img src="https://devpro.github.io/presentations/assets/images/pyramid-test.png" alt="pyramid of tests" class="m-8 ml-30 h-80 rounded shadow" />
+<img src="https://presentations.devpro.fr/assets/images/pyramid-test.png" alt="pyramid of tests" class="m-8 ml-30 h-80 rounded shadow" />
 
 ---
 
@@ -71,7 +71,7 @@ Split the code between the application features and the UI components
 
 An Agile software development process that encourages collaboration
 
-<img src="https://devpro.github.io/presentations/assets/images/bdd.png" alt="Automated Tests, Executable Specifications, Living Documentation" class="m-8 ml-60 h-80 rounded shadow" />
+<img src="https://presentations.devpro.fr/assets/images/bdd.png" alt="Automated Tests, Executable Specifications, Living Documentation" class="m-8 ml-60 h-80 rounded shadow" />
 
 ---
 
@@ -79,7 +79,7 @@ An Agile software development process that encourages collaboration
 
 Business, Testing, Development
 
-<img src="https://devpro.github.io/presentations/assets/images/los-3-amigos.jpg" alt="Los 3 Amigos" class="ml-70 h-100 rounded shadow" />
+<img src="https://presentations.devpro.fr/assets/images/los-3-amigos.jpg" alt="Los 3 Amigos" class="ml-70 h-100 rounded shadow" />
 
 ---
 
