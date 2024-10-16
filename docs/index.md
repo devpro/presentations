@@ -4,10 +4,8 @@ You'll find here the content of all public presentations made by [DevPro](https:
 
 ## Events
 
-Event                                                                                         | Slides
-----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------
-[Meetup DevOps Geneva Feb 2024](https://www.meetup.com/fr-FR/devops-geneve/events/298652964/) | [🇫🇷 Sécurité des conteneurs](https://devpro.github.io/presentations/meetup-secu-conteneur-202402/)
-[DevOpsDays Geneva 2023](https://devopsdays.org/events/2023-geneva/program/bertrand-thomas)   | [🇫🇷 Transformation numérique et DevOps à l'heure des conteneurs](https://public.devpro.fr/slides/devopsdays_geneva_2023_bertrand_thomas.pdf)
+* [Meetup DevOps Geneva Feb 2024](https://www.meetup.com/fr-FR/devops-geneve/events/298652964/): [🇫🇷 Sécurité des conteneurs](https://devpro.github.io/presentations/meetup-secu-conteneur-202402/)
+* [DevOpsDays Geneva 2023](https://devopsdays.org/events/2023-geneva/program/bertrand-thomas): [🇫🇷 Transformation numérique et DevOps à l'heure des conteneurs](https://public.devpro.fr/slides/devopsdays_geneva_2023_bertrand_thomas.pdf)
 
 ## Recent
 

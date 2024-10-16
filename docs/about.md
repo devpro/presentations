@@ -2,4 +2,5 @@
 
 Know more about me:
 
-* [DevPro](https://devpro.fr)
+* [devpro.fr](https://devpro.fr)
+* [GitHub](https://github.com/devpro)
