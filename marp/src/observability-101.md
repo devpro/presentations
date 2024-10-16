@@ -171,8 +171,7 @@ Aka "The Three Pillars of Observability"
 ## Getting started
 
 * Experiment locally with docker compose: OpenTelemetry Collector with Grafana and/or Elastic Stack or Splunk
-* Evaluate OpenTelemetry SDK (exporter & instrumentation): [.NET](https://github.com/open-telemetry/opentelemetry-dotnet),
-[Python](https://opentelemetry-python.readthedocs.io/en/stable/)
+* Evaluate OpenTelemetry SDK (exporter & instrumentation): [.NET](https://github.com/open-telemetry/opentelemetry-dotnet), [Python](https://opentelemetry-python.readthedocs.io/en/stable/)
 
 ---
 

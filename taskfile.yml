@@ -7,9 +7,12 @@ env:
 tasks:
   setup:
     cmds:
-      - sudo npm install -g markdownlint-cli
-      - sudo npm install -g @marp-team/marp-cli
+      - npm install -g markdownlint-cli
+      - npm install -g @marp-team/marp-cli
       - cd slidev ; npm install
+      - pip install mkdocs
+      - pip install mkdocs-dracula-theme
+      # - pip install mkdocs-material
 
   lint:
     cmds:
@@ -19,17 +22,16 @@ tasks:
 
   marp:build:
     dir: marp
+    env:
+      DEST_FOLDER: '../dist'
     cmds:
       - find "$SRC_FOLDER" -name '*.md' | grep -v '101' | xargs marp
       - marp $SRC_FOLDER/*101.md --theme $MARP_CUSTOM_THEME
+      - mkdir -p $DEST_FOLDER/img
+      - cp marp/$SRC_FOLDER/*.html $DEST_FOLDER/
+      - cp marp/$SRC_FOLDER/img/*.* $DEST_FOLDER/img/
 
-  marp:publish:
-    cmds:
-      - mkdir -p dist/img
-      - cp marp/$SRC_FOLDER/*.html dist/
-      - cp marp/$SRC_FOLDER/img/*.* dist/img/
-
-  slidev:publish:
+  slidev:build:
     dir: slidev
     env:
       DEST_FOLDER: '../dist'
@@ -50,3 +52,13 @@ tasks:
   nginx:stop:
     cmds:
       - docker stop presentations-nginx || true
+
+  docs:build:
+    env:
+      DEST_FOLDER: 'dist'
+    cmds:
+      - mkdocs build -d $DEST_FOLDER
+
+  docs:serve:
+    cmds:
+      - mkdocs serve

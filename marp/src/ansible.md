@@ -131,7 +131,7 @@ Inventories can be:
 
 ## Samples
 
-* [rabbids-incubator/ansible-system-collection](https://github.com/rabbids-incubator/ansible-system-collection)
+* [devpro/ansible-system-collection](https://github.com/devpro/ansible-system-collection)
 
 ## Bye for now
 

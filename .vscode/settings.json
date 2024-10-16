@@ -1,6 +1,8 @@
 {
-    "files.exclude": {
-        "**/marp/src/*.html": true,
-        "**/marp/public": true
-    }
+  "files.exclude": {
+    "dist": true,
+    "marp/src/*.html": true,
+    "marp/public": true,
+    "slidev/node_modules": true
+  }
 }

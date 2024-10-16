@@ -31,13 +31,13 @@ npm install -g @marp-team/marp-cli
 * Build HTML output
 
 ```bash
-marp docs/*.md
+marp src/*.md
 ```
 
-* Open [index.html](./docs/index.html)
+* Open [index.html](./src/index.html)
 
 * Start watching the changes on the file you're going to edit
   
 ```bash
-marp docs/index.md --watch
+marp src/index.md --watch
 ```

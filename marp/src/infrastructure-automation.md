@@ -26,7 +26,7 @@ This is a set of best practices from an **open community**.
 
 Everyone is welcome to contribue through pull requests, issues and social media sharings!
 
-→ [rabbids-incubator/infra-automation-best-practices](https://github.com/rabbids-incubator/infra-automation-best-practices)
+→ [devops/presentations](https://github.com/devops/presentations)
 
 ## Infrastructure as Code (IaC)
 
@@ -122,6 +122,6 @@ Some _italic_ and **bold** element.
 
 We'll be glad to have your feedback and support:
 
-→ [rabbids-incubator/infra-automation-best-practices](https://github.com/rabbids-incubator/infra-automation-best-practices)
+→ [devpro.github.io/presentations/infrastructure-automation](https://devpro.github.io/presentations/infrastructure-automation)
 
 Happy updates :smile:

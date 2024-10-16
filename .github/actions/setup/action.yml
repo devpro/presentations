@@ -1,0 +1,20 @@
+name: Setup
+description: Checkout code and setup requirements for CI/CD pipelines
+runs:
+  using: composite
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4                     # https://github.com/marketplace/actions/checkout
+    - name: Instal Node.js (LTS)
+      uses: actions/setup-node@v4                   # https://github.com/actions/setup-node
+      with:
+        node-version: 'lts/*'
+    - name: Set up Python 3
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.x
+    - name: Install Task (taskfile.dev)
+      uses: arduino/setup-task@v2                   # https://github.com/arduino/setup-task
+    - name: Install required CLIs
+      run: task setup
+      shell: bash
