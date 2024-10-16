@@ -36,9 +36,9 @@ tasks:
     env:
       DEST_FOLDER: '../dist'
     cmds:
-      - mkdir -p $DEST_FOLDER
-      - cp -r assets $DEST_FOLDER/assets
-      - npm run build src/index.md -- --base presentations -o ../$DEST_FOLDER
+      - mkdir -p $DEST_FOLDER/assets/images
+      - cp -r assets/images/*.* $DEST_FOLDER/assets/images/
+      # - npm run build src/index.md -- --base presentations -o ../$DEST_FOLDER
       - |
         for file in "$SRC_FOLDER"/*.md; do
           filename=$(basename "$file" .md)
