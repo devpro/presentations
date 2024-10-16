@@ -28,8 +28,8 @@ tasks:
       - find "$SRC_FOLDER" -name '*.md' | grep -v '101' | xargs marp
       - marp $SRC_FOLDER/*101.md --theme $MARP_CUSTOM_THEME
       - mkdir -p $DEST_FOLDER/img
-      - cp marp/$SRC_FOLDER/*.html $DEST_FOLDER/
-      - cp marp/$SRC_FOLDER/img/*.* $DEST_FOLDER/img/
+      - cp $SRC_FOLDER/*.html $DEST_FOLDER/
+      - cp $SRC_FOLDER/img/*.* $DEST_FOLDER/img/
 
   slidev:build:
     dir: slidev
@@ -62,3 +62,9 @@ tasks:
   docs:serve:
     cmds:
       - mkdocs serve
+
+  build:
+    deps:
+      - task: docs:build
+      - task: marp:build
+      - slidev: marp:build

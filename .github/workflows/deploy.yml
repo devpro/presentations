@@ -28,10 +28,7 @@ jobs:
       - name: Use common action
         uses: ./.github/actions/setup
       - name: Build web content
-        run: |
-          task docs:build
-          task marp:build
-          task slidev:build
+        run: task build
       - name: Setup Pages
         uses: actions/configure-pages@v4            # https://github.com/actions/configure-pages
       - name: Upload artifacts

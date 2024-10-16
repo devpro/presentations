@@ -20,10 +20,6 @@ jobs:
       - name: Use common action
         uses: ./.github/actions/setup
       - name: Lint code
-        run: |
-          task lint
+        run: task lint
       - name: Build web content
-        run: |
-          task docs:build
-          task marp:build
-          task slidev:build
+        run: task build
