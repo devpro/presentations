@@ -2,5 +2,8 @@
 
 Know more about me:
 
-* [devpro.fr](https://devpro.fr)
+* [LinkedIn](https://www.linkedin.com/in/berthomas/)
+* [GitLab](https://gitlab.com/devpro-labs)
 * [GitHub](https://github.com/devpro)
+* [devpro.fr](https://devpro.fr)
+* [Blog](https://blog-bertrand-thomas.devpro.fr/)

@@ -15,7 +15,57 @@ img[alt~="center"] {
 
 ![h:400 center](./img/kubernetes-gitops-ship.jpg)
 
-Updated in July 2023
+Last updated in February 2025
+
+---
+
+## Intro - Code lifecycle management with CI/CD (Pega)
+
+![center](./img/pega-ci-cd.png)
+
+---
+
+## Intro - DevOps & the wall of confusion ([Plutora](https://www.plutora.com/blog/what-is-enterprise-devops))
+
+![center](./img/plutora-wall-confusion.jpg)
+
+---
+
+<style>
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+</style>
+
+## Intro - Infrastructure automation dilemma
+
+<div class="columns">
+<div>
+
+### Need
+
+* Dynamic environments (self-service portal target)
+* 1 environment = n components
+* Single source of truth
+* Easy to maintain by many
+* Regular security patches
+* 99.9x% availability
+
+</div>
+<div>
+
+### Existing approach
+
+* CI/CD pipeline approach (push)
+* Development flow != Production updates
+* IaC complicated tooling (Terraform, Ansible, etc.)
+* No IaC orchestration standard
+* Development code quality != Infrastructure expertise
+
+</div>
+</div>
 
 ---
 
@@ -23,60 +73,61 @@ Updated in July 2023
 
 > GitOps is an **operational framework** that takes DevOps best practices used for application development such as version control, collaboration, compliance, and CI/CD, and applies them to **infrastructure automation**.
 
-→ [gitlab.com/gitops](https://about.gitlab.com/topics/gitops/)
+🌐 [gitlab.com/gitops](https://about.gitlab.com/topics/gitops/)
 
 ---
 
-## GitOps - What? (Red Hat)
+## GitOps - What? (Atlassian)
 
-> GitOps is a **set of practices** to manage infrastructure and application configurations using Git, an open source version control system.  
-> GitOps works by using **Git as a single source of truth for declarative infrastructure and applications**.
+> At its core, GitOps is **code-based infrastructure and operational procedures** that rely on Git as a source control system.\
+> It’s an evolution of **Infrastructure as Code (IaC)** and a DevOps best practice that leverages **Git as the single source of truth**, and control mechanism for creating, updating, and deleting system architecture.
 
-→ [redhat.com/what-is-gitops](https://www.redhat.com/en/topics/devops/what-is-gitops)
+🌐 [atlassian.com/git/tutorials/gitops](https://www.atlassian.com/git/tutorials/gitops)
 
 ---
 
-## GitOps - When?
+## GitOps - When? (Weaveworks)
 
-[![center](./img/Short-GitOps-Timeline-Light.png)](https://www.weave.works/technologies/gitops/)
+![center](./img/Short-GitOps-Timeline-Light.png)
+
+---
+
+## GitOps - When? ([VMware](https://blogs.vmware.com/cloud/2021/02/24/gitops-cloud-operating-model/))
+
+![center](./img/GitOps-Cloud-Operating-Model-Swoosh.jpg)
 
 ---
 
 ## GitOps - Why?
 
-* Split application and infrastructure code
-* Enable full automation from version control
-* Simplify environment creation and configuration
-* Apply people responsibility ("Dev", "Ops") to code management
+Action             | Reason
+-------------------|-------------------------------------------------------------------
+**SIMPLIFY**       | YAML files of 20-50 lines
+**OPEN**           | Much larger user audience (IaC reduced perimeter)
+**RESPONSIBILIZE** | The right profile for the right action
+**SCALE**          | Same effort for managing 10 or 10 000 environments
+**SECURE**         | Quality ensured by simple processes and fully controlled execution
 
 ---
 
-## GitOps - How?
+## GitOps & Kubernetes - What? ([ClickIT](https://www.clickittech.com/devops/what-is-gitops/))
 
-[![center](./img/weaveworks-gitops_cd_pipeline.jpg)](https://www.weave.works/blog/gitops-high-velocity-cicd-for-kubernetes)
+![center](./img/GitOps-blog-diagram-57-1024x563.jpg)
 
----
+<!-- ---
 
-## Buzzword fight
+## GitOps vs other practices
 
-Word       | Main challenge  | Breakdown
----------- | --------------- | -------------------------------------
-**CI/CD**  | Technical       | Continuous automation (pipelines)
-**DevOps** | People          | Collaboration practices
-**GitOps** | Processes       | Operational framework
-**IaC**    | Technical       | Repositories with infrastructure code
+Word       | Main challenge | Breakdown
+-----------|----------------|------------------------------------------
+**CI/CD**  | Technical      | Continuous automation (pipelines)
+**DevOps** | People         | Collaboration practices
+**GitOps** | Processes      | Operational framework
+**IaC**    | Technical      | Repositories with infrastructure code -->
 
----
+<!-- ---
 
-## CNCF - Projects
-
-> The [CNCF](https://www.cncf.io/) (Cloud Native Computing Foundation) serves as the vendor-neutral home for many of the fastest-growing open source projects.
-
-![CNCF projects 2021 activity diagram](./img/CNCF%20projects%202021%20activity.png)
-
----
-
-## ArgoCD - Discovery
+## Argo CD - Discovery
 
 > [Argo CD](https://argoproj.github.io/cd/) is a declarative, GitOps continuous delivery tool for Kubernetes.
 
@@ -88,11 +139,11 @@ Word       | Main challenge  | Breakdown
 
 ![h:400 center](./img/argocd-demo.png)
 
-→ [devpro/gitops-samples](https://github.com/devpro/gitops-samples)
+→ [devpro/gitops-samples](https://github.com/devpro/gitops-samples) -->
 
 ---
 
-## Choices of implementation (1/4)
+## GitOps & Kubernetes - How? (1/4)
 
 * Kubernetes definition format
   * [Helm](https://helm.sh/)
@@ -101,26 +152,28 @@ Word       | Main challenge  | Breakdown
 
 ---
 
-## Choices of implementation (2/4)
+## GitOps & Kubernetes - How? (2/4)
 
 * Environment strategy
   * one per folder
-  * one per git branche
+  * one per git branch
   * one per git repository
 
 ---
 
-## Choices of implementation (3/4)
+## GitOps & Kubernetes - How? (3/4)
 
 :warning: No secret values in git!
 
-* Secret management tool
+* Secret management tool for Kubernetes
   * [Bitnami Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets)
-  * [External Secrets](https://external-secrets.io/)
+  * [External Secrets Operator](https://external-secrets.io/)
+  * [Vault Secrets Operator](https://developer.hashicorp.com/vault/docs/platform/k8s/vso)
+  * [Kubernetes Secrets Store CSI Driver](https://secrets-store-csi-driver.sigs.k8s.io/)
 
 ---
 
-## Choices of implementation (4/4)
+## GitOps & Kubernetes - How? (4/4)
 
 * GitOps continuous delivery tool for Kubernetes
   * [Argo CD](https://argoproj.github.io/cd/)
@@ -129,22 +182,88 @@ Word       | Main challenge  | Breakdown
 
 ---
 
-## Getting started
+## Argo CD
 
-* Get familiar with Helm charts
-* Evaluate a set of tools
+> Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes
+
+🌐 [argoproj.github.io/cd](https://argoproj.github.io/cd/) ([argoproj/argo-cd](https://github.com/argoproj/argo-cd))
+
+📝 [Akuity Enterprise for Argo](https://akuity.io/argo-enterprise)
+
+---
+
+## Fleet
+
+> Fleet is a container management and deployment engine designed to offer users more control on the local cluster and constant monitoring through GitOps
+
+🌐 [fleet.rancher.io](https://fleet.rancher.io/) ([rancher/fleet](https://github.com/rancher/fleet))
+
+📝 [CustomResourceDefinition toolbox](https://doc.crds.dev/github.com/rancher/fleet), [Rancher integration](https://ranchermanager.docs.rancher.com/integrations-in-rancher/fleet/overview)
+
+---
+
+## Flux
+
+> Flux is a set of continuous and progressive delivery solutions for Kubernetes that are open and extensible
+
+🌐 [fluxcd.io](https://fluxcd.io/) ([fluxcd/flux2](https://github.com/fluxcd/flux2))
+
+📝 [GitLab Integration](https://docs.gitlab.com/user/clusters/agent/gitops/)
+
+---
+
+## CNCF projects ([Year 2024](https://www.cncf.io/blog/2025/01/29/2024-year-in-review-of-cncf-and-top-30-open-source-project-velocity/)
+
+Argo once again in the top 5 of the most active projects of the [CNCF](https://www.cncf.io/)!
+
+![CNCF projects 2021 activity diagram](./img/cncf-projects-12months-2025.jpg)
+
+---
+
+## Outro - Getting started
+
+* Enforce good practices in source code management with git
+* Refactor CI/CD pipelines to separate integration/delivery/deployment tasks
+* Get comfortable with Helm charts
+* Evaluate a set of tools and practices (ideally with Architecture Decision Records)
 * Start small in a non-production environment
-* Add one new component at a time
-* Get regular feedbacks and keep improving
+* Add one component at a time
+* Share regularly, get early feedbacks and keep trying to improve (Agile :D)
+* Get people onboard (DevOps \o/)
+
+---
+
+## Outro - Words of advice in your GitOps journey
+
+* **NEVER** store a secret value in git
+  * Git never forgets (it it happens, invalid the secret and generate a new one)
+* Encourage Build & Run **COLLABORATION** (Dev & Ops)
+  * Ops can help Dev create Dockerfile and Helm charts
+  * Dev can help Ops work on git repositories and create Kubernetes definitions
+* You **THINK** you know git and use it right
+  * Many operational issues come from a wrong usage of git branches
+  * Follow a well-used standard (Git Flow, GitHub Flow, GitLab Flow)
+* Host and manage your **OWN** application catalog (Helm charts for instance)
+  * Share and capitalize in an organization
+  * Control and validate the applications that are used
+
+---
+
+## OpenGitOps - What?
+
+> OpenGitOps is a set of open-source standards, best practices, and community-focused education to help organizations adopt a structured, standardized approach to implementing GitOps.
+
+🌐 [opengitops.dev](https://opengitops.dev/) ([open-gitops/project](https://github.com/open-gitops/project))
 
 ---
 
 ## References
 
-* [Promoting changes and releases with GitOps](https://en.sokube.ch/post/promoting-changes-and-releases-with-gitops) by SoKube - January 18, 2022
-* [Free eBook on Leanpub](https://leanpub.com/gitops)
+* [Promoting changes and releases with GitOps](https://www.sokube.io/en/blog/promoting-changes-and-releases-with-gitops) by SoKube - January 18, 2022
+* [Argo CD vs. Flux: 6 Key Differences and How to Choose](https://codefresh.io/learn/argo-cd/argo-cd-vs-flux-6-key-differences-and-how-to-choose/) by Codefresh
+* [GitOps on Kubernetes: Deciding Between Argo CD and Flux](https://thenewstack.io/gitops-on-kubernetes-deciding-between-argo-cd-and-flux/) by Christian Hernandez - December 15, 2021
 
----
+<!-- ---
 
 ## Appendix - Helm chart stores
 
@@ -155,4 +274,4 @@ Word       | Main challenge  | Breakdown
 * Dedicated (examples)
   * [Grafana](https://grafana.github.io/helm-charts/)
   * [OpenTelemetry](https://github.com/open-telemetry/opentelemetry-helm-charts)
-  * [Prometheus](https://prometheus-community.github.io/helm-charts/)
+  * [Prometheus](https://prometheus-community.github.io/helm-charts/) -->
