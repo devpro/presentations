@@ -1,4 +1,6 @@
 <!--
+marp src/gitops-101.md --theme css/dracula.css
+
 paginate: false
 -->
 
@@ -19,13 +21,13 @@ Last updated in February 2025
 
 ---
 
-## Intro - Code lifecycle management with CI/CD (Pega)
+## Intro - Lifecycle & CI/CD (Pega)
 
 ![center](./img/pega-ci-cd.png)
 
 ---
 
-## Intro - DevOps & the wall of confusion ([Plutora](https://www.plutora.com/blog/what-is-enterprise-devops))
+## Intro - DevOps wall of confusion ([Plutora](https://www.plutora.com/blog/what-is-enterprise-devops))
 
 ![center](./img/plutora-wall-confusion.jpg)
 
@@ -44,10 +46,11 @@ Last updated in February 2025
 <div class="columns">
 <div>
 
-### Need
+2020's need
 
-* Dynamic environments (self-service portal target)
-* 1 environment = n components
+* Dynamic environments
+* Self-service portal
+* 1 env = n components
 * Single source of truth
 * Easy to maintain by many
 * Regular security patches
@@ -56,13 +59,13 @@ Last updated in February 2025
 </div>
 <div>
 
-### Existing approach
+2010's approach
 
-* CI/CD pipeline approach (push)
-* Development flow != Production updates
-* IaC complicated tooling (Terraform, Ansible, etc.)
+* CI/CD pipelines (push)
+* Dev flow != Prod updates
+* IaC complicated tooling
 * No IaC orchestration standard
-* Development code quality != Infrastructure expertise
+* Dev quality != Infra expertise
 
 </div>
 </div>
@@ -101,12 +104,13 @@ Last updated in February 2025
 ## GitOps - Why?
 
 Action             | Reason
--------------------|-------------------------------------------------------------------
-**SIMPLIFY**       | YAML files of 20-50 lines
-**OPEN**           | Much larger user audience (IaC reduced perimeter)
+-------------------|---------------------------------------
+**SIMPLIFY**       | Small YAML declarative files
+**OPEN**           | Much larger collaboration
 **RESPONSIBILIZE** | The right profile for the right action
-**SCALE**          | Same effort for managing 10 or 10 000 environments
-**SECURE**         | Quality ensured by simple processes and fully controlled execution
+**SCALE**          | Same effort for 10 or 10 000 env
+**SECURE**         | Processes fully automated & versioned
+**MONITOR**        | Cloud Native observability
 
 ---
 
@@ -145,19 +149,21 @@ Word       | Main challenge | Breakdown
 
 ## GitOps & Kubernetes - How? (1/4)
 
-* Kubernetes definition format
-  * [Helm](https://helm.sh/)
-  * [Kustomize](https://kustomize.io/)
-  * Raw manifests
+Kubernetes definition format:
+
+* [Helm](https://helm.sh/)
+* [Kustomize](https://kustomize.io/)
+* Raw manifests
 
 ---
 
 ## GitOps & Kubernetes - How? (2/4)
 
-* Environment strategy
-  * one per folder
-  * one per git branch
-  * one per git repository
+Environment strategy:
+
+* one per folder
+* one per git branch
+* one per git repository
 
 ---
 
@@ -165,20 +171,22 @@ Word       | Main challenge | Breakdown
 
 :warning: No secret values in git!
 
-* Secret management tool for Kubernetes
-  * [Bitnami Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets)
-  * [External Secrets Operator](https://external-secrets.io/)
-  * [Vault Secrets Operator](https://developer.hashicorp.com/vault/docs/platform/k8s/vso)
-  * [Kubernetes Secrets Store CSI Driver](https://secrets-store-csi-driver.sigs.k8s.io/)
+Secret management tool for Kubernetes:
+
+* [Bitnami Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets)
+* [External Secrets Operator](https://external-secrets.io/)
+* [Vault Secrets Operator](https://developer.hashicorp.com/vault/docs/platform/k8s/vso)
+* [Kubernetes Secrets Store CSI Driver](https://secrets-store-csi-driver.sigs.k8s.io/)
 
 ---
 
 ## GitOps & Kubernetes - How? (4/4)
 
-* GitOps continuous delivery tool for Kubernetes
-  * [Argo CD](https://argoproj.github.io/cd/)
-  * [Fleet](https://fleet.rancher.io/)
-  * [Flux](https://fluxcd.io/)
+GitOps continuous delivery tool for Kubernetes:
+
+* [Argo CD](https://argoproj.github.io/cd/)
+* [Fleet](https://fleet.rancher.io/)
+* [Flux](https://fluxcd.io/)
 
 ---
 
@@ -212,40 +220,35 @@ Word       | Main challenge | Breakdown
 
 ---
 
-## CNCF projects ([Year 2024](https://www.cncf.io/blog/2025/01/29/2024-year-in-review-of-cncf-and-top-30-open-source-project-velocity/)
+## CNCF projects ([2024 report](https://www.cncf.io/blog/2025/01/29/2024-year-in-review-of-cncf-and-top-30-open-source-project-velocity/))
 
-Argo once again in the top 5 of the most active projects of the [CNCF](https://www.cncf.io/)!
-
-![CNCF projects 2021 activity diagram](./img/cncf-projects-12months-2025.jpg)
+![center](./img/cncf-projects-12months-2024.jpg)
 
 ---
 
 ## Outro - Getting started
 
-* Enforce good practices in source code management with git
-* Refactor CI/CD pipelines to separate integration/delivery/deployment tasks
+* Enforce good practices in source code management (git)
+* Split integration/delivery/deployment tasks in pipelines
 * Get comfortable with Helm charts
-* Evaluate a set of tools and practices (ideally with Architecture Decision Records)
+* Evaluate a set of tools and practices (ADRs)
 * Start small in a non-production environment
 * Add one component at a time
-* Share regularly, get early feedbacks and keep trying to improve (Agile :D)
+* Share regularly, get feedbacks and improve (Agile :D)
 * Get people onboard (DevOps \o/)
 
 ---
 
-## Outro - Words of advice in your GitOps journey
+## Outro - Advices for your GitOps journey
 
 * **NEVER** store a secret value in git
-  * Git never forgets (it it happens, invalid the secret and generate a new one)
-* Encourage Build & Run **COLLABORATION** (Dev & Ops)
-  * Ops can help Dev create Dockerfile and Helm charts
-  * Dev can help Ops work on git repositories and create Kubernetes definitions
-* You **THINK** you know git and use it right
-  * Many operational issues come from a wrong usage of git branches
-  * Follow a well-used standard (Git Flow, GitHub Flow, GitLab Flow)
-* Host and manage your **OWN** application catalog (Helm charts for instance)
-  * Share and capitalize in an organization
-  * Control and validate the applications that are used
+  * Git never forgets (it it happens, generate a new one)
+* Encourage Build & Run **COLLABORATION**
+  * Dev & Ops can help each other (Dockerfile, Helm charts)
+* Follow a **STANDARD**: Git Flow, GitHub Flow, GitLab Flow
+  * Many issues come from a wrong usage of git branches
+* Host and manage your **OWN** application catalog
+  * Validate & share the applications that can be used
 
 ---
 
