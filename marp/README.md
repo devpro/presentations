@@ -28,6 +28,12 @@ npm -v
 npm install -g @marp-team/marp-cli
 ```
 
+* Go to the sub-folder
+
+```bash
+cd marp
+```
+
 * Build HTML output
 
 ```bash

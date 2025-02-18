@@ -1,0 +1,18 @@
+stages:
+  - build
+
+lint-markdown:
+  stage: build
+  image: node:lts
+  script:
+    - npm install -g markdownlint-cli
+    - markdownlint *.md
+    - markdownlint docs/*.md
+    - cd marp ; markdownlint *.md ; markdownlint "**/*.md" ; cd ..
+    - cd slidev ; markdownlint *.md ; markdownlint "**/*.md" ; cd ..
+
+install-npm-packages:
+  stage: build
+  image: node:lts
+  script:
+    - cd slidev ; npm install ; cd ..
