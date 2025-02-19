@@ -1,7 +1,5 @@
 <!--
-marp src/gitops-101.md --theme css/dracula.css
-
-paginate: false
+command: marp src/gitops-101.md --theme css/dracula.css
 -->
 
 <style>
@@ -10,8 +8,6 @@ img[alt~="center"] {
   margin: 0 auto;
 }
 </style>
-
-<!-- _class: lead -->
 
 # GitOps 101
 
@@ -110,40 +106,51 @@ Action             | Reason
 **RESPONSIBILIZE** | The right profile for the right action
 **SCALE**          | Same effort for 10 or 10 000 env
 **SECURE**         | Processes fully automated & versioned
-**MONITOR**        | Cloud Native observability
+**MONITOR**        | Cloud Native Observability stack
+
+---
+
+## GitOps - Push Approach
+
+![h:400 center](./img/harness-push.png)
+
+🌐 [harness.io/blog](https://www.harness.io/blog/gitops-the-push-and-pull-approach)
+
+---
+
+## GitOps - Pull Approach
+
+![h:400 center](./img/harness-pull.png)
+
+🌐 [harness.io/blog](https://www.harness.io/blog/gitops-the-push-and-pull-approach)
+
+---
+
+## OpenGitOps
+
+> OpenGitOps is a set of open-source standards, best practices, and community-focused education to help organizations adopt a structured, standardized approach to implementing GitOps.
+
+🌐 [opengitops.dev](https://opengitops.dev/) ([open-gitops/project](https://github.com/open-gitops/project))
+
+---
+
+## GitOps Principles
+
+1. **Declarative**
+
+2. **Versioned and Immutable**
+
+3. **Pulled Automatically**
+
+4. **Continuously Reconciled**
+
+🌐 [opengitops.dev](https://opengitops.dev/#principles)
 
 ---
 
 ## GitOps & Kubernetes - What? ([ClickIT](https://www.clickittech.com/devops/what-is-gitops/))
 
 ![center](./img/GitOps-blog-diagram-57-1024x563.jpg)
-
-<!-- ---
-
-## GitOps vs other practices
-
-Word       | Main challenge | Breakdown
------------|----------------|------------------------------------------
-**CI/CD**  | Technical      | Continuous automation (pipelines)
-**DevOps** | People         | Collaboration practices
-**GitOps** | Processes      | Operational framework
-**IaC**    | Technical      | Repositories with infrastructure code -->
-
-<!-- ---
-
-## Argo CD - Discovery
-
-> [Argo CD](https://argoproj.github.io/cd/) is a declarative, GitOps continuous delivery tool for Kubernetes.
-
-![ArgoCD Sealed Secrets screenshot](./img/ArgoCD%20Sealed%20Secrets.png)
-
----
-
-## Demonstration
-
-![h:400 center](./img/argocd-demo.png)
-
-→ [devpro/gitops-samples](https://github.com/devpro/gitops-samples) -->
 
 ---
 
@@ -226,20 +233,20 @@ GitOps continuous delivery tool for Kubernetes:
 
 ---
 
-## Outro - Getting started
+## GitOps - Getting started
 
-* Enforce good practices in source code management (git)
+* Enforce **good practices** in source code management with git
 * Split integration/delivery/deployment tasks in pipelines
-* Get comfortable with Helm charts
-* Evaluate a set of tools and practices (ADRs)
-* Start small in a non-production environment
+* Get **comfortable** with Helm charts
+* **Evaluate** a set of tools and practices (ADRs)
+* Start **small** in a non-production environment
 * Add one component at a time
-* Share regularly, get feedbacks and improve (Agile :D)
-* Get people onboard (DevOps \o/)
+* Share regularly, get **feedbacks** and improve (Agile :D)
+* Get people **on board** (DevOps \o/)
 
 ---
 
-## Outro - Advices for your GitOps journey
+## GitOps - Advices for your journey
 
 * **NEVER** store a secret value in git
   * Git never forgets (it it happens, generate a new one)
@@ -252,29 +259,32 @@ GitOps continuous delivery tool for Kubernetes:
 
 ---
 
-## OpenGitOps - What?
+## Demonstration
 
-> OpenGitOps is a set of open-source standards, best practices, and community-focused education to help organizations adopt a structured, standardized approach to implementing GitOps.
-
-🌐 [opengitops.dev](https://opengitops.dev/) ([open-gitops/project](https://github.com/open-gitops/project))
+* [Devpro](https://www.linkedin.com/in/berthomas/) (the author of this presentation ^^)
+  * [GitOps samples](https://github.com/devpro/gitops-samples)
+  * [Helm charts](https://github.com/devpro/helm-charts)
 
 ---
 
 ## References
 
+* [What Is GitOps? A Beginner's Guide to GitOps Principles and Practices](https://akuity.io/blog/getting-into-gitops) by Akuity - October 30, 2024
 * [Promoting changes and releases with GitOps](https://www.sokube.io/en/blog/promoting-changes-and-releases-with-gitops) by SoKube - January 18, 2022
-* [Argo CD vs. Flux: 6 Key Differences and How to Choose](https://codefresh.io/learn/argo-cd/argo-cd-vs-flux-6-key-differences-and-how-to-choose/) by Codefresh
 * [GitOps on Kubernetes: Deciding Between Argo CD and Flux](https://thenewstack.io/gitops-on-kubernetes-deciding-between-argo-cd-and-flux/) by Christian Hernandez - December 15, 2021
+* [Argo CD vs. Flux: 6 Key Differences and How to Choose](https://codefresh.io/learn/argo-cd/argo-cd-vs-flux-6-key-differences-and-how-to-choose/) by Codefresh
 
-<!-- ---
+<!--
 
-## Appendix - Helm chart stores
+---
 
-* General
-  * [ArtifactHub](https://artifacthub.io/)
-  * [Bitnami](https://bitnami.com/stacks/helm)
-  * [Devpro](https://github.com/devpro/helm-charts)
-* Dedicated (examples)
-  * [Grafana](https://grafana.github.io/helm-charts/)
-  * [OpenTelemetry](https://github.com/open-telemetry/opentelemetry-helm-charts)
-  * [Prometheus](https://prometheus-community.github.io/helm-charts/) -->
+## GitOps vs other practices
+
+Word       | Main challenge | Breakdown
+-----------|----------------|------------------------------------------
+**CI/CD**  | Technical      | Continuous automation (pipelines)
+**DevOps** | People         | Collaboration practices
+**GitOps** | Processes      | Operational framework
+**IaC**    | Technical      | Repositories with infrastructure code
+
+-->
