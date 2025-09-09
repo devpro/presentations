@@ -1,18 +1,19 @@
 stages:
   - build
 
-lint-markdown:
-  stage: build
-  image: node:lts
-  script:
-    - npm install -g markdownlint-cli
-    - markdownlint *.md
-    - markdownlint docs/*.md
-    - cd marp ; markdownlint *.md ; markdownlint "**/*.md" ; cd ..
-    - cd slidev ; markdownlint *.md ; markdownlint "**/*.md" ; cd ..
+cache:
+  paths:
+    - .venv/
+    - slidev/node_modules/
 
-install-npm-packages:
+lint:
   stage: build
-  image: node:lts
+  image: node:lts-alpine
+  before_script:
+    - apk add --no-cache python3 py3-pip
+    - python3 -m venv .venv
+    - . .venv/bin/activate
+    - npm install -g @go-task/cli
   script:
-    - cd slidev ; npm install ; cd ..
+    - task setup
+    - task lint

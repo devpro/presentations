@@ -5,25 +5,44 @@
 **NPM** must be installed (ref. [Download Node.js](https://nodejs.org/en/download/package-manager)):
 
 ```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
-nvm install 20
 node -v
 npm -v
 ```
 
-**Python** must be installed.
-
 **Task** ([taskfile.dev](https://taskfile.dev/installation/)) is used to simplify the commands and unify with the CI/CD pipelines:
 
 ```bash
-sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b ~/.local/bin
+npm install -g @go-task/cli
 ```
 
-NPM packages are required:
+<!-- TODO: use a container image of MkDocs -->
+
+**Python3** must be installed with pip and venv:
+
+```bash
+python --version
+sudo apt install python3-pip
+sudo apt install python3-venv
+```
+
+Create a virtual environment for running Python:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+Packages and binaries are required:
 
 ```bash
 task setup
 ```
+
+<!-- Disable virtual environment for Python:
+
+```bash
+deactivate
+``` -->
 
 ## Code checks
 
