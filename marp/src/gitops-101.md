@@ -13,7 +13,7 @@ img[alt~="center"] {
 
 ![h:400 center](./img/kubernetes-gitops-ship.jpg)
 
-Last updated in February 2025
+Last updated in September 2025
 
 ---
 
@@ -227,9 +227,9 @@ GitOps continuous delivery tool for Kubernetes:
 
 ---
 
-## CNCF projects ([2024 report](https://www.cncf.io/blog/2025/01/29/2024-year-in-review-of-cncf-and-top-30-open-source-project-velocity/))
+## CNCF projects ([Project Velocity](https://github.com/cncf/velocity?tab=readme-ov-file#current-reports))
 
-![center](./img/cncf-projects-12months-2024.jpg)
+![center](./img/cncf_project_velocity_2025.png)
 
 ---
 
@@ -272,6 +272,7 @@ GitOps continuous delivery tool for Kubernetes:
 * [What Is GitOps? A Beginner's Guide to GitOps Principles and Practices](https://akuity.io/blog/getting-into-gitops) by Akuity - October 30, 2024
 * [Promoting changes and releases with GitOps](https://www.sokube.io/en/blog/promoting-changes-and-releases-with-gitops) by SoKube - January 18, 2022
 * [GitOps on Kubernetes: Deciding Between Argo CD and Flux](https://thenewstack.io/gitops-on-kubernetes-deciding-between-argo-cd-and-flux/) by Christian Hernandez - December 15, 2021
+* [Git Blog: What is GitOps?](https://www.gitkraken.com/blog/what-is-gitops) by GitKraken - September 1, 2021
 * [Argo CD vs. Flux: 6 Key Differences and How to Choose](https://codefresh.io/learn/argo-cd/argo-cd-vs-flux-6-key-differences-and-how-to-choose/) by Codefresh
 
 <!--
