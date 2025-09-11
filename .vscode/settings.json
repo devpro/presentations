@@ -1,8 +1,9 @@
 {
   "files.exclude": {
+    ".venv": true,
     "dist": true,
-    "marp/src/*.html": true,
     "marp/public": true,
+    "marp/src/*.html": true,
     "slidev/node_modules": true
   }
 }
