@@ -32,17 +32,25 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
+Install pur and update Python requirements file:
+
+```bash
+pip install pur
+pur -r requirements.txt
+pip install -r requirements.txt
+```
+
 Packages and binaries are required:
 
 ```bash
 task setup
 ```
 
-<!-- Disable virtual environment for Python:
+Disable virtual environment for Python:
 
 ```bash
 deactivate
-``` -->
+```
 
 ## Code checks
 
