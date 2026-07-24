@@ -8,11 +8,11 @@ runs:
       with:
         node-version: 'lts/*'
     - name: Set up Python 3
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v7                 # https://github.com/actions/setup-python
       with:
         python-version: 3.x
     - name: Install Task (taskfile.dev)
-      uses: arduino/setup-task@v2                   # https://github.com/arduino/setup-task
+      run: npm install -g @go-task/cli
     - name: Install required CLIs
       run: task setup
       shell: bash
