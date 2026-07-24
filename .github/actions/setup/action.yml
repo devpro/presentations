@@ -13,6 +13,7 @@ runs:
         python-version: 3.x
     - name: Install Task (taskfile.dev)
       run: npm install -g @go-task/cli
+      shell: bash
     - name: Install required CLIs
       run: task setup
       shell: bash
