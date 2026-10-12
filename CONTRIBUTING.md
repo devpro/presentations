@@ -72,3 +72,8 @@ task docs:serve
 Open the documentation on [127.0.0.1:8000](http://127.0.0.1:8000/).
 
 MkDocs configuration is read from [mkdocs.yml](mkdocs.yml).
+
+## Run the pipeline locally
+
+[IstarCI](https://github.com/devpro/istarci) runs the GitHub Actions pipeline in Docker before the push.
+`istarci add` and `istarci install-hook` set it up for this repository.
