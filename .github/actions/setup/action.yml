@@ -12,8 +12,7 @@ runs:
       with:
         python-version: 3.x
     - name: Install Task (taskfile.dev)
-      run: npm install -g @go-task/cli
-      shell: bash
+      uses: devpro/github-workflow-parts/actions/task/setup@c6d06a61a377a41dc192ce58f08a0b5100d9a2bc
     - name: Install required CLIs
       run: task setup
       shell: bash
