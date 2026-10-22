@@ -6,7 +6,7 @@ cache:
     - .venv/
     - slidev/node_modules/
 
-lint:
+build:
   stage: build
   image: node:lts-alpine
   before_script:
@@ -16,4 +16,4 @@ lint:
     - npm install -g @go-task/cli
   script:
     - task setup
-    - task lint
+    - task build
