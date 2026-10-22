@@ -22,11 +22,10 @@ jobs:
       id-token: write
     uses: devpro/github-workflow-parts/.github/workflows/reusable-pages-deployment.yml@bbf341ec77510dacdfbb04ca5af7947dd8f6fb47
     with:
-      # The command line tools go in a virtual environment and an npm prefix of the run, which a runner without root can write.
+      # The Python tools go in a virtual environment of the run, which a runner without root can write.
       build-command: |
         python3 -m venv "${RUNNER_TEMP}/venv"
-        export NPM_CONFIG_PREFIX="${RUNNER_TEMP}/npm"
-        export PATH="${RUNNER_TEMP}/venv/bin:${RUNNER_TEMP}/npm/bin:$PATH"
+        export PATH="${RUNNER_TEMP}/venv/bin:$PATH"
         task setup
         task build
       site-path: dist

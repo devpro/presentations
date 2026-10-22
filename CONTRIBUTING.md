@@ -9,11 +9,7 @@ node -v
 npm -v
 ```
 
-**Task** ([taskfile.dev](https://taskfile.dev/installation/)) is used to simplify the commands and unify with the CI/CD pipelines:
-
-```bash
-npm install -g @go-task/cli
-```
+**Task** ([taskfile.dev](https://taskfile.dev/installation/)) is used to simplify the commands.
 
 <!-- TODO: use a container image of MkDocs -->
 
@@ -50,14 +46,6 @@ Disable virtual environment for Python:
 
 ```bash
 deactivate
-```
-
-## Code checks
-
-Lint the code with:
-
-```bash
-task lint
 ```
 
 ## Frameworks / libraries

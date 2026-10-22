@@ -5,27 +5,20 @@ env:
   MARP_CUSTOM_THEME: css/dracula.css
 
 tasks:
+  # Every tool at the version a lock file or requirements.txt pins, its download checked against the hash recorded there.
   setup:
     cmds:
-      - npm install -g markdownlint-cli
-      - npm install -g @marp-team/marp-cli
-      - cd slidev ; npm install
-      - python3 -m pip install -r requirements.txt
-
-  lint:
-    cmds:
-      - markdownlint *.md
-      - markdownlint docs/*.md
-      - cd marp ; markdownlint *.md ; markdownlint src/*.md
-      - cd slidev ; markdownlint *.md ; markdownlint src/*.md
+      - npm ci
+      - cd slidev ; npm ci
+      - python3 -m pip install --require-hashes -r requirements.txt
 
   marp:build:
     dir: marp
     env:
       DEST_FOLDER: '../dist'
     cmds:
-      - find "$SRC_FOLDER" -name '*.md' | grep -v '101' | xargs marp
-      - marp $SRC_FOLDER/*101.md --theme $MARP_CUSTOM_THEME
+      - find "$SRC_FOLDER" -name '*.md' | grep -v '101' | xargs {{.ROOT_DIR}}/node_modules/.bin/marp --no-stdin
+      - '{{.ROOT_DIR}}/node_modules/.bin/marp --no-stdin $SRC_FOLDER/*101.md --theme $MARP_CUSTOM_THEME'
       - mkdir -p $DEST_FOLDER/img
       - cp $SRC_FOLDER/*.html $DEST_FOLDER/
       - cp $SRC_FOLDER/img/*.* $DEST_FOLDER/img/

@@ -1,0 +1,8 @@
+{
+  "name": "presentations",
+  "private": true,
+  "description": "The command line tools of the build, at versions the lock file pins with their hashes",
+  "devDependencies": {
+    "@marp-team/marp-cli": "4.5.1"
+  }
+}
