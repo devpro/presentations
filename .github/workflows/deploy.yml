@@ -20,7 +20,7 @@ jobs:
       contents: read
       pages: write
       id-token: write
-    uses: devpro/github-workflow-parts/.github/workflows/reusable-pages-deployment.yml@591b0c7bfba6fbc7b0cab7d896447e0732b819de
+    uses: devpro/github-workflow-parts/.github/workflows/reusable-pages-deployment.yml@bf95c99bf5b5a0bc2d2991c81975488a16f16142
     with:
       # The Python tools go in a virtual environment of the run, which a runner without root can write.
       build-command: |
@@ -30,4 +30,4 @@ jobs:
         task build
       site-path: dist
       task-enabled: true
-      workflow-parts-version: 591b0c7bfba6fbc7b0cab7d896447e0732b819de
+      workflow-parts-version: bf95c99bf5b5a0bc2d2991c81975488a16f16142
