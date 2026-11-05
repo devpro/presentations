@@ -19,11 +19,11 @@ permissions:
 jobs:
   markup-lint:
     name: Markup
-    uses: devpro/github-workflow-parts/.github/workflows/reusable-markup-lint.yml@8c856cd16adc8a0ca01c7889a9c7d98ad8593818
+    uses: devpro/github-workflow-parts/.github/workflows/reusable-markup-lint.yml@5379b9d0052e3b233ec2e56ba8678e827361b89e
 
   build:
     name: Build
-    uses: devpro/github-workflow-parts/.github/workflows/reusable-pages-deployment.yml@8c856cd16adc8a0ca01c7889a9c7d98ad8593818
+    uses: devpro/github-workflow-parts/.github/workflows/reusable-pages-deployment.yml@5379b9d0052e3b233ec2e56ba8678e827361b89e
     with:
       # The Python tools go in a virtual environment of the run, which a runner without root can write.
       build-command: |
@@ -34,4 +34,4 @@ jobs:
       deploy: false
       site-path: dist
       task-enabled: true
-      workflow-parts-version: 8c856cd16adc8a0ca01c7889a9c7d98ad8593818
+      workflow-parts-version: 5379b9d0052e3b233ec2e56ba8678e827361b89e
