@@ -1,0 +1,20 @@
+runner:
+  sonarqube:
+    gate: true
+    profile: Sonar way comprehensive
+    projects:
+      - presentations
+
+workflow:
+  onDisallowedAction: fail
+  allowedActions:
+    - actions/*
+    - github/*
+    - docker/*
+    - devpro/github-workflow-parts/*
+  exclude:
+    - deploy.yaml
+
+vars:
+  SONAR_ORG: local
+  SONAR_PROJECT_KEY: presentations
