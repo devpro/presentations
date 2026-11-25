@@ -35,3 +35,20 @@ jobs:
       site-path: dist
       task-enabled: true
       workflow-parts-version: 398cf79719f90e41e3407bc9f060e297629d800d
+
+  code-quality:
+    name: Code
+    # Without a Sonar project there is nothing to analyse against.
+    if: vars.SONAR_PROJECT_KEY != ''
+    uses: devpro/github-workflow-parts/.github/workflows/reusable-node-quality.yml@398cf79719f90e41e3407bc9f060e297629d800d
+    with:
+      sonar-enabled: true
+      # The exports are generated files.
+      sonar-exclusions: "**/node_modules/**,exports/**"
+      sonar-host-url: ${{ vars.SONAR_HOST_URL || 'https://sonarcloud.io' }}
+      sonar-organization: ${{ vars.SONAR_ORG }}
+      sonar-project-key: ${{ vars.SONAR_PROJECT_KEY }}
+      sonar-project-name: presentations
+      workflow-parts-version: 398cf79719f90e41e3407bc9f060e297629d800d
+    secrets:
+      sonar-token: ${{ secrets.SONAR_TOKEN }}

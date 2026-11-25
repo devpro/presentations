@@ -13,7 +13,7 @@ workflow:
     - docker/*
     - devpro/github-workflow-parts/*
   exclude:
-    - deploy.yaml
+    - deploy.yml
 
 vars:
   SONAR_ORG: local
